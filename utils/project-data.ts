@@ -9,10 +9,15 @@ export type ProjectType = {
   slug: string;
   title: string;
   description: string;
-  image: StaticImageData;
+  date: Date | string;
+  cover: StaticImageData;
+  scrreenshots?: StaticImageData[];
   code: string;
-  link?: string;
+  demo: string;
   tools: string[];
+  backgroundColor: string;
+  textColor: string;
+  font: string;
 };
 
 export const projectList: ProjectType[] = [
@@ -21,39 +26,55 @@ export const projectList: ProjectType[] = [
     title: "Jordquest",
     description:
       "Jordquest is a multiplayer hack-n-slash game in a procedurally generated arena with PvE and PvP elements.",
-    image: JordQuest,
+    date: "2023-12",
+    cover: JordQuest,
     code: "https://github.com/lampealex888/cs1666final-jordquest",
-    link: "https://lampealex888.itch.io/jordquest",
+    demo: "https://lampealex888.itch.io/jordquest",
     tools: ["Bevy", "Rust"],
+    backgroundColor: "#000000",
+    textColor: "#ffffff",
+    font: "https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap",
   },
   {
     slug: "grandpas-gone",
     title: "Grandpa's Gone",
     description:
       "Grandpa’s Gone is a puzzle game where you need to help the main character find his grandpa by solving various puzzles and challenges.",
-    image: GrandpasGone,
+    date: "WIP",
+    cover: GrandpasGone,
     code: "https://github.com/lampealex888/gamejam2023-grandpas-gone",
-    link: "https://justaglitch.itch.io/grandpa-is-gone",
+    demo: "https://justaglitch.itch.io/grandpa-is-gone",
     tools: ["Unity", "C#"],
+    backgroundColor: "#000000",
+    textColor: "#ffffff",
+    font: "https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap",
   },
   {
     slug: "grammar-query",
     title: "Grammar Query",
     description:
       "Grammar Query is a language learning app that helps users improve their grammar skills through interactive quizzes and exercises.",
-    image: GrammarQuery,
+    date: "WIP",
+    cover: GrammarQuery,
     code: "https://github.com/lampealex888/sheinnovates2022-grammar-query",
-    link: "https://nickzana.github.io/grammarquery/",
+    demo: "https://nickzana.github.io/grammarquery/",
     tools: ["HTML", "CSS", "JS", "GrammarBot API", "SpeechRecognition API"],
+    backgroundColor: "#000000",
+    textColor: "#ffffff",
+    font: "https://fonts.googleapis.com/css2?family=Roboto&display=swap",
   },
   {
     slug: "space-invaders",
     title: "Space Invaders",
+    date: "WIP",
     description:
       "Space Invaders is a classic arcade game where the player controls a spaceship and must shoot down waves of alien invaders before they reach the bottom of the screen.",
-    image: SpaceInvaders,
+    cover: SpaceInvaders,
     code: "https://github.com/lampealex888/space-invaders/tree/main",
-    link: "https://lampealex888.itch.io/space-invaders",
+    demo: "https://lampealex888.itch.io/space-invaders",
     tools: ["PyGame", "Python", "Pygbag"],
+    backgroundColor: "#000000",
+    textColor: "#ffffff",
+    font: "https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap",
   },
 ];
