@@ -5,7 +5,7 @@ const Clock = dynamic(() => import("../components/Clock"), { ssr: false });
 
 const Footer: React.FC = () => {
   return (
-    <footer className="text-white p-4">
+    <footer className="bg-black text-white p-4">
       <ul className="flex space-x-4 items-center justiry-center">
         <li>
           <a href={`mailto:lampealex888@gmail.com`} target="_blank">

@@ -8,7 +8,7 @@ import ProjectListing from "../components/ProjectListing";
 
 export default function Home(): JSX.Element {
   return (
-    <div className="bg-black text-white">
+    <div className="bg-black">
       <Head>
         <title>Alex Lampe</title>
         <meta name="description" content="Your brief description here." />

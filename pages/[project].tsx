@@ -1,3 +1,4 @@
+import { GetStaticPropsContext, InferGetStaticPropsType, NextPage } from "next";
 import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
@@ -7,16 +8,20 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { projectList } from "../utils/project-data";
 
-export default function Project({ projectData }) {
+
+const Project: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
+  index,
+  projectData,
+}) => {
   return (
-    <div className={`bg-${projectData.backgroundColor} text-${projectData.textColor}`}>
+    <div>
       <Head>
         <title>{projectData.title}</title>
       </Head>
 
       <Header />
 
-      <div className="max-w-3x1 mx-auto p-6">
+      <div className="bg-black text-white max-w-3x1 mx-auto p-6">
         <Image
           src={projectData.cover}
           alt={projectData.title}
@@ -66,7 +71,9 @@ export default function Project({ projectData }) {
   );
 }
 
-export async function getStaticPaths() {
+export default Project;
+
+export const getStaticPaths = async () => {
   const projectPaths = projectList.map((project) => {
     return {
       params: {
@@ -81,14 +88,19 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params }) {
-  const projectData = projectList.find(
-    (project) => project.slug === params.project
-  );
+export const getStaticProps = async (context: GetStaticPropsContext) => {
+  const projectSlug = context.params.project;
+
+  const index = projectList.findIndex((project) => project.slug === projectSlug);
+
+  if (index === -1) {
+    throw new Error(`Project with slug ${projectSlug} not found!`);
+  }
 
   return {
     props: {
-      projectData,
+      index,
+      projectData: projectList[index]
     },
   };
 }

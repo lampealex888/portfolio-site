@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Header: React.FC = () => {
   return (
-    <header className="text-white p-4">
+    <header className="bg-black text-white p-4">
       <nav className="flex items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
           <Image
