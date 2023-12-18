@@ -1,7 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
 
-const Header: React.FC = () => {
+type HeaderProps = {
+  // Add any props here if needed
+};
+
+const Header: React.FC<HeaderProps> = () => {
   return (
     <header className="text-white p-4">
       <nav className="flex items-center justify-between">

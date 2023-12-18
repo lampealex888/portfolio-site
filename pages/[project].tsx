@@ -105,7 +105,7 @@ export const getStaticPaths = async () => {
 }
 
 export const getStaticProps = async (context: GetStaticPropsContext) => {
-  const projectSlug = context.params.project;
+  const projectSlug = context.params?.project;
 
   const index = projectList.findIndex((project) => project.slug === projectSlug);
 

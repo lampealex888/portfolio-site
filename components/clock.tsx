@@ -1,5 +1,19 @@
 import React, { useState, useEffect } from 'react';
 
+type DateOptions = {
+  weekday: 'long';
+  year: 'numeric';
+  month: 'short';
+  day: 'numeric';
+};
+
+type TimeOptions = {
+  hour: 'numeric';
+  minute: 'numeric';
+  second: 'numeric';
+  hour12: false;
+};
+
 const Clock: React.FC = () => {
   const [currentDate, setCurrentDate] = useState<string>(
     new Date().toLocaleDateString('en-US', {
@@ -7,9 +21,9 @@ const Clock: React.FC = () => {
       year: 'numeric',
       month: 'short',
       day: 'numeric',
-    })
-    .split(',')
-    .join('')
+    } as DateOptions)
+      .split(',')
+      .join('')
   );
 
   const [currentTime, setCurrentTime] = useState<string>(
@@ -18,7 +32,7 @@ const Clock: React.FC = () => {
       minute: 'numeric',
       second: 'numeric',
       hour12: false,
-    })
+    } as TimeOptions)
   );
 
   useEffect(() => {
@@ -29,9 +43,9 @@ const Clock: React.FC = () => {
           year: 'numeric',
           month: 'short',
           day: 'numeric',
-        })
-        .split(',')
-        .join('')
+        } as DateOptions)
+          .split(',')
+          .join('')
       );
       setCurrentTime(
         new Date().toLocaleTimeString('en-US', {
@@ -39,7 +53,7 @@ const Clock: React.FC = () => {
           minute: 'numeric',
           second: 'numeric',
           hour12: false,
-        })
+        } as TimeOptions)
       );
     }, 1000);
 
