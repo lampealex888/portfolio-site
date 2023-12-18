@@ -1,9 +1,5 @@
 import Image from "next/image";
-import Clock from "../components/Clock";
-
-// import dynamic from "next/dynamic";
-// const Clock = dynamic(() => import("../components/Clock"), { ssr: false });
-
+import Clock from "./Clock";
 type Icon = {
   src: string;
   alt: string;
