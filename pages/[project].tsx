@@ -19,7 +19,7 @@ const Project: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
         <title>{projectData.title}</title>
       </Head>
 
-      <body className="flex flex-col justify-between min-h-screen">
+      <main className="flex flex-col justify-between min-h-screen">
         <Header />
         <div className={`bg-[${projectData.backgroundColor}] text-[${projectData.textColor}] max-w-3xl mx-auto p-6`}>
           <Image
@@ -82,7 +82,7 @@ const Project: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
         </div>
 
         <Footer />
-      </body>
+      </main>
     </div>
   );
 }

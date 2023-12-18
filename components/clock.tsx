@@ -15,6 +15,8 @@ type TimeOptions = {
 };
 
 const Clock: React.FC = () => {
+  const [isClient, setIsClient] = useState(false)
+
   const [currentDate, setCurrentDate] = useState<string>(
     new Date().toLocaleDateString('en-US', {
       weekday: 'long',
@@ -36,6 +38,7 @@ const Clock: React.FC = () => {
   );
 
   useEffect(() => {
+    setIsClient(true);
     const intervalId = setInterval(() => {
       setCurrentDate(
         new Date().toLocaleDateString('en-US', {

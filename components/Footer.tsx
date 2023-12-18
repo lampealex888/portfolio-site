@@ -1,5 +1,8 @@
 import Image from "next/image";
-import dynamic from "next/dynamic";
+import Clock from "../components/Clock";
+
+// import dynamic from "next/dynamic";
+// const Clock = dynamic(() => import("../components/Clock"), { ssr: false });
 
 type Icon = {
   src: string;
@@ -7,8 +10,6 @@ type Icon = {
   width: number;
   height: number;
 };
-
-const Clock = dynamic(() => import("./Clock"), { ssr: false });
 
 const Footer: React.FC = () => {
   const icons: Icon[] = [
