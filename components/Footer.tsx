@@ -8,7 +8,7 @@ type Icon = {
   height: number;
 };
 
-const Clock = dynamic(() => import("../components/Clock"), { ssr: false });
+const Clock = dynamic(() => import("./Clock"), { ssr: false });
 
 const Footer: React.FC = () => {
   const icons: Icon[] = [
