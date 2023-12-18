@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Header: React.FC = () => {
   return (
-    <header className="bg-black text-white p-4">
+    <header className="text-white p-4">
       <nav className="flex items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
           <Image
@@ -19,7 +19,7 @@ const Header: React.FC = () => {
         <ul className="flex space-x-4">
           <li>
             {/* TODO: Add resume link */}
-            <a href="" className="hover:text-gray-300">
+            <a href="" className="hover:underline">
               Resume
             </a>
           </li>
@@ -27,13 +27,13 @@ const Header: React.FC = () => {
             <Link
               target="_blank"
               href="https://github.com/lampealex888"
-              className="hover:text-gray-300"
             >
               <Image
                 src="icons/github-icon.svg"
                 alt="GitHub logo icon"
                 width={24}
                 height={24}
+                className=""
               />
             </Link>
           </li>
@@ -41,13 +41,13 @@ const Header: React.FC = () => {
             <Link
               target="_blank"
               href="https://www.linkedin.com/in/alex-lampe-8233691b4/"
-              className="hover:text-gray-300"
             >
               <Image
                 src="icons/linkedin-icon.svg"
                 alt="LinkedIn logo icon"
                 width={24}
                 height={24}
+                className=""
               />
             </Link>
           </li>
@@ -55,13 +55,13 @@ const Header: React.FC = () => {
             <Link
               target="_blank"
               href="https://itch.io/profile/lampealex888"
-              className="hover:text-gray-300"
             >
               <Image
                 src="icons/itchio-icon.svg"
                 alt="Itch.io logo icon"
                 width={24}
                 height={24}
+                className=""
               />
             </Link>
           </li>

@@ -6,9 +6,9 @@ import Footer from "../components/Footer";
 import { projectList } from "../utils/project-data";
 import ProjectListing from "../components/ProjectListing";
 
-export default function Home(): JSX.Element {
+const Home: React.FC = () => {
   return (
-    <div className="bg-black">
+    <div>
       <Head>
         <title>Alex Lampe</title>
         <meta name="description" content="Your brief description here." />
@@ -26,15 +26,17 @@ export default function Home(): JSX.Element {
             height={200}
             className="rounded-full mx-auto"
           />
-          <h1 className="text-4x1 font-bold underline mt-4">
-            Hi! I'm Alex Lampe
-          </h1>
-          <p className="text-lg">Student at Pitt</p>
-          <p className="text-lg">Web/Game Developer</p>
+          <div>
+            <h1 className="text-xl font-bold underline mt-4">
+              Hi! I'm Alex Lampe
+            </h1>
+            <p className="text-lg">Student at Pitt</p>
+            <p className="text-lg">Web/Game Developer</p>
+          </div>
         </section>
 
         <section id="projects" className="mt-16">
-          <h2 className="text-2x1 font-bold mb-8">Projects</h2>
+          <h2 className="text-5x1 font-bold mb-8">Projects</h2>
           <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {projectList.map((project) => (
               <ProjectListing key={project.slug} project={project} />
@@ -47,3 +49,5 @@ export default function Home(): JSX.Element {
     </div>
   );
 }
+
+export default Home;

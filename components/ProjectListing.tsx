@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Key, ReactChild, ReactFragment, ReactPortal } from "react";
 
 import { ProjectType } from "../utils/project-data";
 
@@ -22,10 +23,37 @@ const ProjectListing = ({ project }: ProjectListingProps) => {
             className="rounded-md"
           />
         </div>
-        <h3 className="text-x1 font-bold mb-2">{project.title}</h3>
+        <h3 className="text-4xl font-bold mb-2">{project.title}</h3>
         <p className="text-gray-400 mb-4">{project.description}</p>
+        <p className="mt-2">Tools Used: </p>
+        <div className="grid grid-cols-2 gap-4">
+          <ul className="list-disc pl-6">
+            {project.tools.slice(0, Math.ceil(project.tools.length / 2)).map(
+              (
+                tool: boolean | ReactChild | ReactFragment | ReactPortal,
+                index: Key
+              ) => (
+                <li key={index} className="">
+                  {tool}
+                </li>
+              )
+            )}
+          </ul>
+          <ul className="list-disc">
+            {project.tools.slice(Math.ceil(project.tools.length / 2)).map(
+              (
+                tool: boolean | ReactChild | ReactFragment | ReactPortal,
+                index: Key
+              ) => (
+                <li key={index} className="">
+                  {tool}
+                </li>
+              )
+            )}
+          </ul>
+        </div>
       </Link>
-      <div className="flex space-x-4">
+      <div className="flex space-x-4 mt-4">
         <a
           href={project.code}
           target="_blank"
@@ -41,7 +69,6 @@ const ProjectListing = ({ project }: ProjectListingProps) => {
           Demo
         </a>
       </div>
-      <p className="mt-2">Tools Used: {project.tools.join(", ")}</p>
     </div>
   );
 };

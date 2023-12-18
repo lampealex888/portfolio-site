@@ -5,9 +5,11 @@ const Clock: React.FC = () => {
     new Date().toLocaleDateString('en-US', {
       weekday: 'long',
       year: 'numeric',
-      month: 'long',
+      month: 'short',
       day: 'numeric',
     })
+    .split(',')
+    .join('')
   );
 
   const [currentTime, setCurrentTime] = useState<string>(
@@ -15,6 +17,7 @@ const Clock: React.FC = () => {
       hour: 'numeric',
       minute: 'numeric',
       second: 'numeric',
+      hour12: false,
     })
   );
 
@@ -24,15 +27,18 @@ const Clock: React.FC = () => {
         new Date().toLocaleDateString('en-US', {
           weekday: 'long',
           year: 'numeric',
-          month: 'long',
+          month: 'short',
           day: 'numeric',
         })
+        .split(',')
+        .join('')
       );
       setCurrentTime(
         new Date().toLocaleTimeString('en-US', {
           hour: 'numeric',
           minute: 'numeric',
           second: 'numeric',
+          hour12: false,
         })
       );
     }, 1000);
@@ -43,9 +49,9 @@ const Clock: React.FC = () => {
   }, []);
 
   return (
-    <div>
-      <p>{currentDate}</p>
+    <div className="flex flex-col items-center justify-center">
       <p>{currentTime}</p>
+      <p>{currentDate}</p>
     </div>
   );
 };
