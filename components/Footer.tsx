@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Clock from "./Clock";
+
 type Icon = {
   src: string;
   alt: string;
@@ -7,7 +8,11 @@ type Icon = {
   height: number;
 };
 
-const Footer: React.FC = () => {
+type FooterProps = {
+  // Add any props here if needed
+};
+
+const Footer: React.FC<FooterProps> = () => {
   const icons: Icon[] = [
     {
       src: "icons/nextjs.svg",

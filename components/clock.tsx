@@ -14,7 +14,11 @@ type TimeOptions = {
   hour12: false;
 };
 
-const Clock: React.FC = () => {
+type ClockProps = {
+  // Add any props here if needed
+};
+
+const Clock: React.FC<ClockProps> = () => {
   const [isClient, setIsClient] = useState(false)
 
   const [currentDate, setCurrentDate] = useState<string>(
