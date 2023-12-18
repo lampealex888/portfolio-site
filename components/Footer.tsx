@@ -8,8 +8,8 @@ const Footer: React.FC = () => {
     <footer className="text-white p-4">
       <ul className="flex items-center justify-between">
         <li>
-          <a 
-            href={`mailto:lampealex888@gmail.com`} 
+          <a
+            href={`mailto:lampealex888@gmail.com`}
             target="_blank"
             className="hover:underline"
           >
@@ -22,7 +22,11 @@ const Footer: React.FC = () => {
         <li className="flex flex-col items-center space-x-2">
           <p>Made with: </p>
           <div className="flex flex-row">
-            <a href="https://nextjs.org/" target="_blank">
+            <a
+              href="https://nextjs.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Image
                 src="icons/nextjs.svg"
                 alt="Next.js logo icon"
@@ -30,7 +34,11 @@ const Footer: React.FC = () => {
                 height={24}
               />
             </a>
-            <a href="https://reactjs.org/" target="_blank">
+            <a
+              href="https://reactjs.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Image
                 src="icons/react.svg"
                 alt="React logo icon"
@@ -38,7 +46,11 @@ const Footer: React.FC = () => {
                 height={24}
               />
             </a>
-            <a href="https://www.typescriptlang.org/" target="_blank">
+            <a
+              href="https://www.typescriptlang.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Image
                 src="icons/typescript.svg"
                 alt="Typescript logo icon"
@@ -46,7 +58,11 @@ const Footer: React.FC = () => {
                 height={24}
               />
             </a>
-            <a href="https://tailwindcss.com/" target="_blank">
+            <a
+              href="https://tailwindcss.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Image
                 src="icons/tailwind-css.svg"
                 alt="Tailwind CSS logo icon"

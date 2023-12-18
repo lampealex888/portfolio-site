@@ -13,7 +13,6 @@ const Header: React.FC = () => {
             height={24}
             className="mr-2"
           />
-          Alex Lampe
         </Link>
 
         <ul className="flex space-x-4">
@@ -27,6 +26,7 @@ const Header: React.FC = () => {
             <Link
               target="_blank"
               href="https://github.com/lampealex888"
+              rel="noopener noreferrer"
             >
               <Image
                 src="icons/github-icon.svg"
@@ -41,6 +41,7 @@ const Header: React.FC = () => {
             <Link
               target="_blank"
               href="https://www.linkedin.com/in/alex-lampe-8233691b4/"
+              rel="noopener noreferrer"
             >
               <Image
                 src="icons/linkedin-icon.svg"
@@ -55,6 +56,7 @@ const Header: React.FC = () => {
             <Link
               target="_blank"
               href="https://itch.io/profile/lampealex888"
+              rel="noopener noreferrer"
             >
               <Image
                 src="icons/itchio-icon.svg"
