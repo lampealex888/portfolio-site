@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Head from "next/head";
-import {  Link as ScrollLink } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -16,41 +16,43 @@ const Home: React.FC = () => {
         <link rel="icon" href="/code-icon.svg" />
       </Head>
 
-      <Header />
+      <body>
+        <Header />
 
-      <main className="container mx-auto">
-        <section id="hero" className="text-center mt-16 min-h-screen flex flex-col justify-around">
-          <div>
-            <Image
-              src="/images/frog-pic.gif"
-              alt="Profile picture"
-              width={200}
-              height={200}
-              className="rounded-full mx-auto"
-            />
-            <h1 className="text-5xl font-bold mt-4">
-              Hi! I'm Alex Lampe
-            </h1>
-            <p className="text-3xl mt-2">Student at Pitt - Web/Game Developer</p>
-          </div>
-          <div>
-            <ScrollLink to="projects" smooth={true} duration={500} className="hover:underline">
-              <p>↓ Check out some of my projects below ↓</p>
-            </ScrollLink>
-          </div>
-        </section>
+        <main className="container mx-auto">
+          <section id="hero" className="text-center mt-16">
+            <div>
+              <Image
+                src="/images/frog-pic.gif"
+                alt="Profile picture"
+                width={200}
+                height={200}
+                className="rounded-full mx-auto"
+              />
+              <h1 className="text-5xl font-bold mt-4">
+                Hi! I'm Alex Lampe
+              </h1>
+              <p className="text-3xl mt-2">Student at Pitt - Web/Game Developer</p>
+            </div>
+            <div>
+              <ScrollLink to="projects" smooth={true} duration={500}>
+                <p className="mt-16 hover:underline">↓ Check out some of my projects below ↓</p>
+              </ScrollLink>
+            </div>
+          </section>
 
-        <section id="projects" className="mt-20">
-          <h2 className="text-5xl font-bold mb-8">Projects</h2>
-          <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-            {projectList.map((project) => (
-              <ProjectListing key={project.slug} project={project} />
-            ))}
-          </div>
-        </section>
-      </main>
+          <section id="projects" className="mt-20">
+            <h2 className="text-5xl font-bold mb-8">Projects</h2>
+            <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+              {projectList.map((project) => (
+                <ProjectListing key={project.slug} project={project} />
+              ))}
+            </div>
+          </section>
+        </main>
 
-      <Footer />
+        <Footer />
+      </body>
     </div>
   );
 }
