@@ -1,12 +1,11 @@
 import Image from "next/image";
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 type Icon = {
+  href: string;
   src: string;
   alt: string;
-  width: number;
-  height: number;
-};
+}
 
 type DateOptions = {
   weekday: 'long';
@@ -29,30 +28,26 @@ type FooterProps = {
 const Footer: React.FC<FooterProps> = () => {
   const [isClient, setIsClient] = useState(false)
   
-  const icons: Icon[] = [
+  const techs: Icon[] = [
     {
+      href: "https://nextjs.org/",
       src: "icons/nextjs.svg",
-      alt: "Next.js logo icon",
-      width: 24, 
-      height: 24,
+      alt: "Next.js logo icon"
     },
     {
+      href: "https://react.dev/",
       src: "icons/react.svg",
-      alt: "React logo icon",
-      width: 24,
-      height: 24,
+      alt: "React logo icon"
     },
     {
+      href: "https://www.typescriptlang.org/",
       src: "icons/typescript.svg",
-      alt: "Typescript logo icon",
-      width: 24,
-      height: 24,
+      alt: "Typescript logo icon"
     },
     {
+      href: "https://tailwindcss.com/",
       src: "icons/tailwind-css.svg",
-      alt: "Tailwind CSS logo icon",
-      width: 24,
-      height: 24,
+      alt: "Tailwind CSS logo icon"
     },
   ];
 
@@ -116,23 +111,29 @@ const Footer: React.FC<FooterProps> = () => {
             Connect with me
           </a>
         </li>
-        <li>
-        <div className="flex flex-col items-center justify-center">
-          <p>{currentTime}</p>
-          <p>{currentDate}</p>
-        </div>
-        </li>
+        {isClient ? 
+          <li>
+            <div className="flex flex-col items-center justify-center">
+              <p>{currentTime}</p>
+              <p>{currentDate}</p>
+            </div>
+          </li> : null}
         <li className="flex flex-col items-center space-x-2">
           <p>Made with: </p>
           <div className="flex flex-row">
-            {icons.map((icon) => (
+            {techs.map((tech) => (
               <a
-                key={icon.src}
-                href={icon.src}
+                key={tech.src}
+                href={tech.href}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Image {...icon} />
+                <Image 
+                src={tech.src}
+                alt={tech.alt}
+                height="24"
+                width="24"
+                className="mr-2" />
               </a>
             ))}
           </div>
