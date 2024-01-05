@@ -4,8 +4,8 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  theme: {
-    extend: {},
+  daisyui: {
+    themes: ["winter", "business"],
   },
-  plugins: [require("daisyui")],
+  plugins: [require("daisyui")]
 }

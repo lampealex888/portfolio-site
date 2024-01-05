@@ -24,17 +24,25 @@ const ProjectListing = ({ project }: ProjectListingProps) => {
       </Link>
       <div className="card-body">
         <Link href={project.demo}>
-          <h2 className="card-title link link-primary">{project.title}</h2>
+          <h2 className="card-title link link-primary no-underline">
+            {project.title}
+          </h2>
         </Link>
         <p>{project.description}</p>
         <p className="">Tools Used: {project.tools.join(", ")}</p>
         <ul className="list-disc pl-6"></ul>
         <div className="flex justify-around">
-          <Link href={project.demo} className="btn btn-primary w-1/3">
-            Live Demo
+          <Link
+            href={project.demo}
+            className="btn btn-accent w-1/3"
+          >
+            <p>Live Demo</p>
           </Link>
-          <Link href={project.code} className="btn btn-primary w-1/3">
-            Code
+          <Link
+            href={project.code}
+            className="btn btn-secondary w-1/3"
+          >
+            <p>Code</p>
           </Link>
         </div>
       </div>

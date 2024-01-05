@@ -14,9 +14,16 @@ const Home: React.FC = () => {
         <link rel="icon" href="/code-icon.svg" />
       </Head>
       <div className="hero">
-        <div className="hero-content my-20">
-          <div className="w-1/2">
-            <h1 className="text-5xl font-bold mt-5">Hello there!</h1>
+        <div className="hero-content my-20 flex flex-col md:flex-row-reverse md:justify-items-start">
+          <Image
+            src="/images/frog-pic.gif"
+            alt="Profile picture"
+            width="200"
+            height="200"
+            className="rounded-full mx-auto"
+          />
+          <div className="max-w-xl">
+            <h1 className="text-5xl font-bold mt-5">Hi there!</h1>
             <p className="py-6">
               Welcome to my portfolio! I'm Alex Lampe, a passionate web/game
               developer and computer science student at the University of
@@ -29,19 +36,9 @@ const Home: React.FC = () => {
               <button className="btn btn-primary">Check out my stuff ↓</button>
             </ScrollLink>
           </div>
-          <Image
-            src="/images/frog-pic.gif"
-            alt="Profile picture"
-            width={200}
-            height={200}
-            className="rounded-full mx-auto"
-          />
         </div>
       </div>
-      <div
-        id="projects"
-        className="my-4 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3"
-      >
+      <div id="projects" className="my-4 grid grid-cols-1 gap-4 md:grid-cols-2">
         {projectList.map((project) => (
           <ProjectListing key={project.title} project={project} />
         ))}
