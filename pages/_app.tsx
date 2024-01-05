@@ -6,9 +6,9 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 const App: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
-    <div className="m-auto min-w-[300px] max-w-7xl min-h-screen">
+    <div>
         <Navbar />
-        <div className="p-4">
+        <div>
           <Component {...pageProps} />
         </div>
         <Footer />

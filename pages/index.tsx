@@ -7,7 +7,7 @@ import ProjectListing from "../components/ProjectListing";
 
 const Home: React.FC = () => {
   return (
-    <div>
+    <div className="m-auto min-w-[300px] max-w-7xl">
       <Head>
         <title>Alex Lampe</title>
         <meta name="description" content="Alex Lampe portfolio website" />

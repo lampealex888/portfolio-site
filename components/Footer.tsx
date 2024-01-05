@@ -69,8 +69,8 @@ export default function Footer() {
   }, []);
 
   return (
-    <div className="bg-base-300 p-4">
-      <ul className="flex items-center justify-between">
+    <div className="bg-base-300 py-4 min-w-[300px]">
+      <ul className="flex items-center justify-between m-auto max-w-7xl flex-col gap-2 sm:flex-row">
         <li>
           <Link
             href={`mailto:ajl146@pitt.edu`}

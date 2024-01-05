@@ -36,13 +36,13 @@ const ProjectListing = ({ project }: ProjectListingProps) => {
             href={project.demo}
             className="btn btn-accent w-1/3"
           >
-            <p>Live Demo</p>
+            <p>Open Site</p>
           </Link>
           <Link
             href={project.code}
             className="btn btn-secondary w-1/3"
           >
-            <p>Code</p>
+            <p>View Code</p>
           </Link>
         </div>
       </div>

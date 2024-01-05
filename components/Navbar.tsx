@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <div className="bg-base-200">
+    <div className="bg-base-200 min-w-[300px]">
       <div className="navbar m-auto max-w-7xl flex-col gap-2 sm:flex-row">
         {/* Logo + Name */}
         <div className="flex-1">
