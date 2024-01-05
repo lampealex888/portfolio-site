@@ -4,8 +4,6 @@ import Head from "next/head";
 import Image from "next/image";
 import { Key, ReactChild, ReactFragment, ReactPortal } from "react";
 
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import { projectList } from "../utils/project-data";
 
 
@@ -19,8 +17,7 @@ const Project: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
         <title>{projectData.title}</title>
       </Head>
 
-      <main className="flex flex-col justify-between min-h-screen">
-        <Header />
+      <main className="flex flex-col justify-between">
         <div className={`bg-[${projectData.backgroundColor}] text-[${projectData.textColor}] max-w-3xl mx-auto p-6`}>
           <Image
             src={projectData.cover}
@@ -80,8 +77,6 @@ const Project: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
             <Link href="/">← Back to home</Link>
           </div>
         </div>
-
-        <Footer />
       </main>
     </div>
   );
