@@ -38,7 +38,7 @@ const Home: React.FC = () => {
           </div>
         </div>
       </div>
-      <div id="projects" className="my-4 grid grid-cols-1 gap-4 md:grid-cols-2">
+      <div id="projects" className="my-20 grid grid-cols-1 gap-4 md:grid-cols-2">
         {projectList.map((project) => (
           <ProjectListing key={project.title} project={project} />
         ))}

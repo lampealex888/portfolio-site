@@ -69,7 +69,7 @@ export default function Footer() {
   }, []);
 
   return (
-    <div className="bg-base-300 py-4 min-w-[300px]">
+    <div className="bg-base-300 py-8 px-4 min-w-[300px]">
       <ul className="flex items-center justify-between m-auto max-w-7xl flex-col gap-2 sm:flex-row">
         <li>
           <Link

@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <div className="bg-base-200 min-w-[300px]">
+    <div className="bg-base-200 px-4 min-w-[300px]">
       <div className="navbar m-auto max-w-7xl flex-col gap-2 sm:flex-row">
         {/* Logo + Name */}
         <div className="flex-1">
@@ -34,7 +34,7 @@ export default function Navbar() {
           {/* Resume */}
           <Link
             href="https://flowcv.com/resume/4oihw2osgj"
-            className="btn btn-ghost text-lg normal-case link link-accent no-underline "
+            className="btn btn-ghost text-lg normal-case link link-accent no-underline"
           >
             <p>Resume</p>
           </Link>

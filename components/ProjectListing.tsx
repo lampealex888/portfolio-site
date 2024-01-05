@@ -18,7 +18,7 @@ const ProjectListing = ({ project }: ProjectListingProps) => {
             alt={project.title}
             width="800"
             height="400"
-            className="rounded-md max-h-64 object-cover"
+            className="rounded-md object-cover"
           />
         </figure>
       </Link>
