@@ -10,30 +10,32 @@ const Home: React.FC = () => {
     <div>
       <Head>
         <title>Alex Lampe</title>
-        <meta name="description" content="Your brief description here." />
+        <meta name="description" content="Alex Lampe portfolio website" />
         <link rel="icon" href="/code-icon.svg" />
       </Head>
       <div className="hero">
-        <div className="hero-content">
-          <div className="">
-            <Image
-              src="/images/frog-pic.gif"
-              alt="Profile picture"
-              width={400}
-              height={400}
-              className="rounded-full mx-auto"
-            />
+        <div className="hero-content my-20">
+          <div className="w-1/2">
             <h1 className="text-5xl font-bold mt-5">Hello there!</h1>
             <p className="py-6">
-              Welcome to my digital domain, where creativity meets code and
-              pixels come to life. I'm a passionate web/game developer and
-              programmer, dedicated to creating playful experiences through the
-              fusion of innovative technology and artistic expression.
+              Welcome to my portfolio! I'm Alex Lampe, a passionate web/game
+              developer and computer science student at the University of
+              Pittsburgh. I love to create and learn new things, and I'm always
+              looking for opportunities to do so. I'm currently seeking a summer
+              2024 internship, so if you're interested in working with me,
+              please reach out!
             </p>
             <ScrollLink to="projects" smooth={true} duration={500}>
               <button className="btn btn-primary">Check out my stuff ↓</button>
             </ScrollLink>
           </div>
+          <Image
+            src="/images/frog-pic.gif"
+            alt="Profile picture"
+            width={200}
+            height={200}
+            className="rounded-full mx-auto"
+          />
         </div>
       </div>
       <div
@@ -41,7 +43,7 @@ const Home: React.FC = () => {
         className="my-4 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3"
       >
         {projectList.map((project) => (
-          <ProjectListing key={project.slug} project={project} />
+          <ProjectListing key={project.title} project={project} />
         ))}
       </div>
     </div>
