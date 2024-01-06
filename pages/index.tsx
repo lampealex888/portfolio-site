@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Head from "next/head";
 import { Link as ScrollLink } from "react-scroll";
 
 import { projectList } from "../utils/project-data";
@@ -8,11 +7,6 @@ import ProjectListing from "../components/ProjectListing";
 const Home: React.FC = () => {
   return (
     <div className="m-auto min-w-[300px] max-w-7xl">
-      <Head>
-        <title>Alex Lampe</title>
-        <meta name="description" content="Alex Lampe portfolio website" />
-        <link rel="icon" href="/code-icon.svg" />
-      </Head>
       <div className="hero">
         <div className="hero-content my-20 flex flex-col md:flex-row-reverse md:justify-items-start">
           <Image
