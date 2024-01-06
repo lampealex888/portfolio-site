@@ -1,18 +1,12 @@
 import React from "react";
-import { useEffect } from "react";
 import { AppProps } from "next/app";
 import Head from "next/head";
 
 import "../styles/globals.css";
 import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import { initGA, logPageView } from "../utils/analytics"; // Import the utility you created
+import Footer from "../components/Footer";import Script from "next/script";
 
 const App: React.FC<AppProps> = ({ Component, pageProps }) => {
-  useEffect(() => {
-    initGA()
-    logPageView()
-  }, []);
 
   return (
     <div>
@@ -33,6 +27,19 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
       </Head>
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-HXWN302756"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-HXWN302756');
+        `}
+      </Script>
       <Navbar />
       <div>
         <Component {...pageProps} />
