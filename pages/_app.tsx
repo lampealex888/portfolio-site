@@ -1,12 +1,19 @@
 import React from "react";
-import "../styles/globals.css";
+import { useEffect } from "react";
 import { AppProps } from "next/app";
 import Head from "next/head";
 
+import "../styles/globals.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { initGA, logPageView } from "../utils/analytics"; // Import the utility you created
 
 const App: React.FC<AppProps> = ({ Component, pageProps }) => {
+  useEffect(() => {
+    initGA()
+    logPageView()
+  }, []);
+
   return (
     <div>
       <Head>
@@ -17,7 +24,7 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
           development projects. Senior Computer Science student at the 
           University of Pittsburgh, seeking a summer 2024 internship. 
           Skilled in TypeScript, Java, Python, React, Next.js, Node.js, 
-          Express.js, PostgreSQL, Unity, and more." 
+          Express.js, PostgreSQL, Unity, and more."
         />
         <link rel="icon" href="/images/favicon.ico" />
         {/* OpenGraph Meta Tags */}
