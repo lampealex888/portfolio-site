@@ -11,14 +11,11 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <div>
       <Head>
-        <title>Alex Lampe - Web/Game Developer Portfolio</title>
+        <title>Alex Lampe</title>
         <meta
           name="description"
-          content="Explore Alex Lampe's portfolio showcasing web and game 
-          development projects. Senior Computer Science student at the 
-          University of Pittsburgh, seeking a summer 2024 internship. 
-          Skilled in TypeScript, Java, Python, React, Next.js, Node.js, 
-          Express.js, PostgreSQL, Unity, and more."
+          content="Explore Alex's portfolio as a web and game 
+          developer in Pittsburgh, PA"
         />
         <link rel="icon" href="/images/favicon.ico" />
         {/* OpenGraph Meta Tags */}

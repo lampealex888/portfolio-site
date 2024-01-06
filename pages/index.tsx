@@ -19,7 +19,7 @@ const Home: React.FC = () => {
           <div className="max-w-xl">
             <h1 className="text-5xl font-bold mt-5">Hi there!</h1>
             <p className="py-6">
-              Welcome to my portfolio! I'm Alex Lampe, a passionate web/game
+              Welcome to my portfolio! I'm a passionate web/game
               developer and computer science student at the University of
               Pittsburgh. I love to create and learn new things, and I'm always
               looking for opportunities to do so. I'm currently seeking a summer
