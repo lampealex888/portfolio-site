@@ -89,7 +89,7 @@ const Footer = () => {
           </li>
         ) : null}
         <li className="flex flex-row">
-          <label className="swap swap-rotate">
+          <label className="swap swap-rotate btn btn-circle btn-ghost">
             {/* this hidden checkbox controls the state */}
             <input
               type="checkbox"
