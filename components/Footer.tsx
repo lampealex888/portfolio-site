@@ -15,7 +15,7 @@ type TimeOptions = {
   hour12: false;
 };
 
-export default function Footer() {
+const Footer = () => {
   const [isClient, setIsClient] = useState(false);
 
   const [currentDate, setCurrentDate] = useState<string>(
@@ -79,6 +79,7 @@ export default function Footer() {
             Contact
           </Link>
         </li>
+        {/* Clock */}
         {isClient ? (
           <li>
             <div className="flex flex-col items-center justify-center">
@@ -111,4 +112,6 @@ export default function Footer() {
       </ul>
     </div>
   );
-}
+};
+
+export default Footer;

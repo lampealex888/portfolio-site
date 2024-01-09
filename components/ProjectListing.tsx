@@ -1,53 +1,33 @@
-import Link from "next/link";
-import Image from "next/image";
-import { Key, ReactChild, ReactFragment, ReactPortal } from "react";
+import type Project from "../interfaces/Project";
+import ProjectPreview from "./ProjectPreview";
 
-import { ProjectType } from "../utils/project-data";
-
-type ProjectListingProps = {
-  project: ProjectType;
+type Props = {
+  projects: Project[];
 };
 
-const ProjectListing = ({ project }: ProjectListingProps) => {
+const MoreStories = ({ projects }: Props) => {
   return (
-    <div className="card min-h-full w-full bg-base-100 transition-shadow hover:shadow-xl">
-      <Link href={project.demo}>
-        <figure>
-          <Image
-            src={project.cover}
-            alt={project.title}
-            width="800"
-            height="400"
-            className="rounded-md object-cover"
+    <section>
+      <h2 className="mb-8 text-5xl md:text-7xl font-bold tracking-tighter leading-tight">
+        Projects
+      </h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-16 lg:gap-x-32 gap-y-20 md:gap-y-32 mb-32">
+        {projects.map((project) => (
+          <ProjectPreview
+            key={project.slug}
+            title={project.title}
+            coverImage={project.coverImage}
+            date={project.date}
+            slug={project.slug}
+            excerpt={project.excerpt}
+            code={project.code}
+            demo={project.demo}
+            tools={project.tools}
           />
-        </figure>
-      </Link>
-      <div className="card-body">
-        <Link href={project.demo}>
-          <h2 className="card-title link link-primary no-underline">
-            {project.title}
-          </h2>
-        </Link>
-        <p>{project.description}</p>
-        <p className="">Tools Used: {project.tools.join(", ")}</p>
-        <ul className="list-disc pl-6"></ul>
-        <div className="flex justify-around">
-          <Link
-            href={project.demo}
-            className="btn btn-accent w-1/3"
-          >
-            <p>Open Site</p>
-          </Link>
-          <Link
-            href={project.code}
-            className="btn btn-secondary w-1/3"
-          >
-            <p>View Code</p>
-          </Link>
-        </div>
+        ))}
       </div>
-    </div>
+    </section>
   );
 };
 
-export default ProjectListing;
+export default MoreStories;
