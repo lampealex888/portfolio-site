@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function Navbar() {
+const Header = () => {
   return (
     <div className="bg-base-200 px-4 min-w-[300px]">
       <div className="navbar m-auto max-w-7xl flex-col gap-2 sm:flex-row">
@@ -8,7 +8,7 @@ export default function Navbar() {
         <div className="flex-1">
           <Link
             href="/"
-            className="btn btn-ghost link link-primary no-underline text-xl normal-case"
+            className="btn btn-ghost text-xl normal-case"
           >
             <svg
               className="fill-current w-[24px] h-[24px]"
@@ -69,4 +69,6 @@ export default function Navbar() {
       </div>
     </div>
   );
-}
+};
+
+export default Header;

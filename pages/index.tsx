@@ -1,44 +1,63 @@
-import Image from "next/image";
-import { Link as ScrollLink } from "react-scroll";
-
-import { projectList } from "../utils/project-data";
+import Head from "next/head";
+import Post from "../interfaces/Post";
+import Project from "../interfaces/Project";
+import Layout from "../components/Layout";
+import Container from "../components/Container";
+import Hero from "../components/Hero";
+import PostListing from "../components/PostListing";
 import ProjectListing from "../components/ProjectListing";
+import { getAllPosts } from "../lib/PostAPI";
+import { getAllProjects } from "../lib/ProjectAPI";
 
-const Home: React.FC = () => {
+type Props = {
+  allPosts: Post[];
+  allProjects: Project[];
+};
+
+const Index = ({ allPosts, allProjects }: Props) => {
+  const Posts = allPosts;
+  const Projects = allProjects;
   return (
-    <div className="m-auto min-w-[300px] max-w-7xl">
-      <div className="hero">
-        <div className="hero-content my-20 flex flex-col md:flex-row-reverse md:justify-items-start">
-          <Image
-            src="/images/frog-pic.gif"
-            alt="Profile picture"
-            width="200"
-            height="200"
-            className="rounded-full mx-auto"
-          />
-          <div className="max-w-xl">
-            <h1 className="text-5xl font-bold mt-5">Hi there!</h1>
-            <p className="py-6">
-              Welcome to my portfolio! I'm a passionate web/game
-              developer and computer science student at the University of
-              Pittsburgh. I love to create and learn new things, and I'm always
-              looking for opportunities to do so. I'm currently seeking a summer
-              2024 internship, so if you're interested in working with me,
-              please reach out!
-            </p>
-            <ScrollLink to="projects" smooth={true} duration={500}>
-              <button className="btn btn-primary">Check out my stuff ↓</button>
-            </ScrollLink>
-          </div>
+    <Layout>
+      <Head>
+        <title>Alex Lampe</title>
+      </Head>
+      <Container>
+        <Hero />
+        <div id="projects">
+          {Projects.length > 0 && <ProjectListing projects={Projects} />}
         </div>
-      </div>
-      <div id="projects" className="my-20 grid grid-cols-1 gap-4 md:grid-cols-2">
-        {projectList.map((project) => (
-          <ProjectListing key={project.title} project={project} />
-        ))}
-      </div>
-    </div>
+        <div id="blog">{Posts.length > 0 && <PostListing posts={Posts} />}</div>
+      </Container>
+    </Layout>
   );
 };
 
-export default Home;
+export default Index;
+
+export const getStaticProps = async () => {
+  const allPosts = getAllPosts([
+    "title",
+    "date",
+    "slug",
+    "author",
+    "coverImage",
+    "excerpt",
+  ]);
+
+  const allProjects = getAllProjects([
+    "title",
+    "date",
+    "slug",
+    "author",
+    "coverImage",
+    "excerpt",
+    "code",
+    "demo",
+    "tools",
+  ]);
+
+  return {
+    props: { allPosts, allProjects },
+  };
+};
