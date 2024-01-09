@@ -10,7 +10,7 @@ demo: "https://lampealex888.itch.io/jordquest"
 tools: ["Bevy", "Rust"]
 ---
 
-# Jordquest
+## Summary
 
 `Jordquest` was my final project for CS1666 Game Design and Implementation. It's a multiplayer hack-n-slash in a randomly generated arena with both PvE and PvP content. Through this project I was able to learn a lot about Rust and it's game engine Bevy.
 

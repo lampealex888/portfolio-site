@@ -1,5 +1,5 @@
 ---
-title: "Dynamic Routing and Static Generation"
+title: "Choosing Between Next.js and Astro: A Developer's Perspective"
 excerpt: "In the ever-evolving landscape of web development, selecting the right framework is a crucial decision. Two compelling options that have "
 coverImage: "/assets/blog/next.js-vs-astro/cover.png"
 date: "2024-01-09T00:00:00.000Z"
