@@ -1,10 +1,10 @@
 ---
 title: 'DaisyUI vs Bootstrap: Choosing the Right UI Framework for Your Project'
-excerpt: 'Explore the differences between DaisyUI and Bootstrap to make an informed decision on which UI framework best suits your web development needs.'
-coverImage: '/assets/blog/daisyui-vs-bootstrap/cover.jpg'
-date: '2024-01-09T12:15:30.678Z'
+excerpt: 'Explore the speed and versatility of Next.js and Astro. React-centric power or zero-config performance – your choice shapes the web.'
+coverImage: '/assets/blog/daisyui-vs-bootstrap/cover.png'
+date: '2024-01-09T00:00:00.000Z'
 ogImage:
-  url: '/assets/blog/daisyui-vs-bootstrap/cover.jpg'
+  url: '/assets/blog/daisyui-vs-bootstrap/cover.png'
 ---
 
 Choosing the right UI framework is a pivotal decision in web development, and two popular options that developers often consider are **DaisyUI** and **Bootstrap**. Each framework brings its own set of features, design philosophies, and customization capabilities. In this blog post, we'll delve into the characteristics of DaisyUI and Bootstrap to help you make an informed choice for your project.

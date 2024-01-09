@@ -1,19 +1,47 @@
 ---
-title: 'Space Invaders'
-excerpt: 'Space Invaders is a classic arcade game where the player controls a spaceship and must shoot down waves of alien invaders before they reach the bottom of the screen.'
-coverImage: '/assets/projects/space-invaders/cover.png'
-date: '2020-06-01T00:00:00.000Z'
+title: "Space Invaders"
+excerpt: "Space Invaders is a classic arcade game where the player controls a spaceship and must shoot down waves of alien invaders before they reach the bottom of the screen."
+coverImage: "/assets/projects/space-invaders/cover.png"
+date: "2020-06-01T00:00:00.000Z"
 ogImage:
-  url: '/assets/projects/space-invaders/cover.png'
+  url: "/assets/projects/space-invaders/cover.png"
 code: "https://github.com/lampealex888/space-invaders/tree/main"
 demo: "https://lampealex888.itch.io/space-invaders"
 tools: ["PyGame", "Python", "Pygbag"]
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
+## Overview
 
-Venenatis cras sed felis eget velit. Consectetur libero id faucibus nisl tincidunt. Gravida in fermentum et sollicitudin ac orci phasellus egestas tellus. Volutpat consequat mauris nunc congue nisi vitae. Id aliquet risus feugiat in ante metus dictum at tempor. Sed blandit libero volutpat sed cras. Sed odio morbi quis commodo odio aenean sed adipiscing. Velit euismod in pellentesque massa placerat. Mi bibendum neque egestas congue quisque egestas diam in arcu. Nisi lacus sed viverra tellus in. Nibh cras pulvinar mattis nunc sed. Luctus accumsan tortor posuere ac ut consequat semper viverra. Fringilla ut morbi tincidunt augue interdum velit euismod.
+This project showcases my passion for game development, specifically through the creation of a Space Invaders game in Python. It represents a blend of my programming skills, creativity, and interest in retro arcade games.
 
-## Lorem Ipsum
+## Features
 
-Tristique senectus et netus et malesuada fames ac turpis. Ridiculous mus mauris vitae ultricies leo integer malesuada nunc vel. In mollis nunc sed id semper. Egestas tellus rutrum tellus pellentesque. Phasellus vestibulum lorem sed risus ultricies tristique nulla. Quis blandit turpis cursus in hac habitasse platea dictumst quisque. Eros donec ac odio tempor orci dapibus ultrices. Aliquam sem et tortor consequat id porta nibh. Adipiscing elit duis tristique sollicitudin nibh sit amet commodo nulla. Diam vulputate ut pharetra sit amet. Ut tellus elementum sagittis vitae et leo. Arcu non odio euismod lacinia at quis risus sed vulputate.
+- **Classic Gameplay:** I implemented the iconic Space Invaders gameplay where players control a spaceship to defend against descending alien invaders.
+
+- **User Controls:** Users can navigate the spaceship horizontally and shoot bullets to eliminate the alien invaders. Simple and intuitive controls make the game accessible to all.
+
+- **Alien Invaders Formation:** The invaders move in a coordinated formation, gradually descending towards the player. This adds a strategic element to the game, requiring players to time their shots and movements.
+
+- **Score Tracking:** The game keeps track of the player's score, encouraging competition and replayability.
+
+- **Sound Effects:** I added retro-style sound effects to enhance the gaming experience, providing auditory feedback for actions such as shooting and alien invader movements.
+
+## Code Highlights
+
+- **Object-Oriented Design:** I structured the code using object-oriented principles, with separate classes for the player's spaceship, alien invaders, bullets, and game mechanics.
+
+- **Pygame Library:** Leveraging the Pygame library, I handled graphics, user input, and sound, streamlining the development process and allowing for a focus on gameplay logic.
+
+- **Collision Detection:** I implemented robust collision detection algorithms to ensure accurate interactions between bullets, the player's spaceship, and the alien invaders.
+
+## Future Improvements
+
+While the current version of the Space Invaders game represents a significant achievement, I plan to continue refining and expanding the project. Future improvements may include:
+
+- **Enhanced Graphics:** Incorporating improved graphics and animations to elevate the visual appeal of the game.
+
+- **Power-Ups:** Introducing power-ups that provide the player with temporary advantages, adding depth to the gameplay.
+
+- **Levels and Difficulty Progression:** Implementing multiple levels with increasing difficulty to keep players engaged and challenged.
+
+Feel free to check out the [Space Invaders GitHub repository](https://github.com/lampealex888/space-invaders) for the complete source code and project documentation.

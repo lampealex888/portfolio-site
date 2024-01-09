@@ -1,19 +1,21 @@
 ---
-title: 'Jordquest'
-excerpt: 'Jordquest is a multiplayer hack-n-slash game in a procedurally generated arena with PvE and PvP elements.'
-coverImage: '/assets/projects/jordquest/cover.png'
-date: '2023-12-01T00:00:00.000Z'
+title: "Jordquest"
+excerpt: "Jordquest is a multiplayer hack-n-slash game in a procedurally generated arena with PvE and PvP elements."
+coverImage: "/assets/projects/jordquest/cover.png"
+date: "2023-12-01T00:00:00.000Z"
 ogImage:
-  url: '/assets/projects/jordquest/cover.png'
+  url: "/assets/projects/jordquest/cover.png"
 code: "https://github.com/lampealex888/cs1666final-jordquest"
 demo: "https://lampealex888.itch.io/jordquest"
 tools: ["Bevy", "Rust"]
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
+# Jordquest
 
-Venenatis cras sed felis eget velit. Consectetur libero id faucibus nisl tincidunt. Gravida in fermentum et sollicitudin ac orci phasellus egestas tellus. Volutpat consequat mauris nunc congue nisi vitae. Id aliquet risus feugiat in ante metus dictum at tempor. Sed blandit libero volutpat sed cras. Sed odio morbi quis commodo odio aenean sed adipiscing. Velit euismod in pellentesque massa placerat. Mi bibendum neque egestas congue quisque egestas diam in arcu. Nisi lacus sed viverra tellus in. Nibh cras pulvinar mattis nunc sed. Luctus accumsan tortor posuere ac ut consequat semper viverra. Fringilla ut morbi tincidunt augue interdum velit euismod.
+`Jordquest` was my final project for CS1666 Game Design and Implementation. It's a multiplayer hack-n-slash in a randomly generated arena with both PvE and PvP content. Through this project I was able to learn a lot about Rust and it's game engine Bevy.
 
-## Lorem Ipsum
+## Technical Details
 
-Tristique senectus et netus et malesuada fames ac turpis. Ridiculous mus mauris vitae ultricies leo integer malesuada nunc vel. In mollis nunc sed id semper. Egestas tellus rutrum tellus pellentesque. Phasellus vestibulum lorem sed risus ultricies tristique nulla. Quis blandit turpis cursus in hac habitasse platea dictumst quisque. Eros donec ac odio tempor orci dapibus ultrices. Aliquam sem et tortor consequat id porta nibh. Adipiscing elit duis tristique sollicitudin nibh sit amet commodo nulla. Diam vulputate ut pharetra sit amet. Ut tellus elementum sagittis vitae et leo. Arcu non odio euismod lacinia at quis risus sed vulputate.
+UDP networking connects together players with a listen server on the host player's computer. Connecting over LAN directly by IP. Focus on reliability and performance.
+
+Each round starts with a randomly generated arena, placing enemy camps, items decorations, obstacles, and terrain throughout the map. Enemies will use A\* search to efficiently find paths to the player and back to their respective camp. Focus on balance, complexity, and natural appearance.
