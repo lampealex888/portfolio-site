@@ -26,6 +26,8 @@ export default function Post({ post, morePosts, preview }: Props) {
   }
   const currentIndex = morePosts.findIndex((p) => p.slug === post.slug);
   const nextPost = morePosts[currentIndex + 1] || null;
+  const prevPost = morePosts[currentIndex - 1] || null;
+  console.log(nextPost, prevPost)
 
   return (
     <Layout>
@@ -46,17 +48,28 @@ export default function Post({ post, morePosts, preview }: Props) {
               />
               <PostBody content={post.content} />
             </article>
-            {nextPost && (
-              <div className="mb-32">
-                <Link
-                  className="text-2xl font-bold flex justify-end link hover:underline no-underline"
+            {nextPost || prevPost ? (
+              <div className="mb-32 flex flex-row justify-end gap-x-20">
+                {nextPost && (
+                  <Link
+                  className="text-2xl font-bold link hover:underline no-underline"
                   as={`/posts/${nextPost.slug}`}
                   href={`/posts/${nextPost.slug}`}
                 >
-                  Next Post: {nextPost.title} →
+                  Next Post: →
                 </Link>
+                )}
+                {prevPost && (
+                  <Link
+                  className="text-2xl font-bold link hover:underline no-underline"
+                  as={`/posts/${prevPost.slug}`}
+                  href={`/posts/${prevPost.slug}`}
+                >
+                  ← Previous Post
+                </Link>
+                )}
               </div>
-            )}
+            ): null}
           </>
         )}
       </Container>

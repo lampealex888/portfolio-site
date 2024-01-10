@@ -25,6 +25,7 @@ export default function Projects({ project, moreProjects, preview }: Props) {
   }
   const currentIndex = moreProjects.findIndex((p) => p.slug === project.slug);
   const nextProject = moreProjects[currentIndex + 1] || null;
+  const prevProject = moreProjects[currentIndex - 1] || null;
 
   return (
     <Layout>
@@ -45,17 +46,28 @@ export default function Projects({ project, moreProjects, preview }: Props) {
               />
               <ContentBody content={project.content} />
             </article>
-            {nextProject && (
-              <div className="mb-32">
-                <Link
-                  className="text-2xl font-bold flex justify-end link hover:underline no-underline"
-                  as={`/projects/${nextProject.slug}`}
-                  href={`/projects/${nextProject.slug}`}
-                >
-                  Next Project: {nextProject.title} →
-                </Link>
+            {nextProject || prevProject ? (
+              <div className="mb-32 flex flex-row justify-end gap-x-20">
+                {prevProject && (
+                  <Link
+                    className="text-2xl font-bold link hover:underline no-underline"
+                    as={`/projects/${prevProject.slug}`}
+                    href={`/projects/${prevProject.slug}`}
+                  >
+                    ← Previous Project
+                  </Link>
+                )}
+                {nextProject && (
+                  <Link
+                    className="text-2xl font-bold link hover:underline no-underline"
+                    as={`/projects/${nextProject.slug}`}
+                    href={`/projects/${nextProject.slug}`}
+                  >
+                    Next Project →
+                  </Link>
+                )}
               </div>
-            )}
+            ) : null}
           </>
         )}
       </Container>
