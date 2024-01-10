@@ -1,11 +1,11 @@
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
-import Container from "../../components/Container";
-import ContentBody from "../../components/ContentBody";
-import ContentHeader from "../../components/ContentHeader";
-import Layout from "../../components/Layout";
+import Container from "../../components/container";
+import ContentBody from "../../components/contentBody";
+import ContentHeader from "../../components/contentHeader";
+import Layout from "../../components/layout";
 import { getProjectBySlug, getAllProjects } from "../../lib/ProjectAPI";
-import ContentTitle from "../../components/ContentTitle";
+import ContentTitle from "../../components/contentTitle";
 import Head from "next/head";
 import markdownToHtml from "../../lib/MarkdownToHtml";
 import type ProjectType from "../../interfaces/Project";

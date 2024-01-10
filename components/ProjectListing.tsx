@@ -1,5 +1,5 @@
 import type Project from "../interfaces/Project";
-import ProjectPreview from "./ProjectPreview";
+import ProjectPreview from "./projectPreview";
 
 type Props = {
   projects: Project[];

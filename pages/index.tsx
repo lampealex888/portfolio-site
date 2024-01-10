@@ -1,11 +1,11 @@
 import Head from "next/head";
 import Post from "../interfaces/Post";
 import Project from "../interfaces/Project";
-import Layout from "../components/Layout";
-import Container from "../components/Container";
-import Hero from "../components/Hero";
-import PostListing from "../components/PostListing";
-import ProjectListing from "../components/ProjectListing";
+import Layout from "../components/layout";
+import Container from "../components/container";
+import Hero from "../components/hero";
+import PostListing from "../components/postListing";
+import ProjectListing from "../components/projectListing";
 import { getAllPosts } from "../lib/PostAPI";
 import { getAllProjects } from "../lib/ProjectAPI";
 

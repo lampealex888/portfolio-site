@@ -1,5 +1,5 @@
-import DateFormatter from "./DateFormatter";
-import CoverImage from "./CoverImage";
+import DateFormatter from "./dateFormatter";
+import CoverImage from "./coverImage";
 import Link from "next/link";
 
 type Props = {
