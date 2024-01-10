@@ -4,11 +4,11 @@ import Container from "../../components/container";
 import ContentBody from "../../components/contentBody";
 import ContentHeader from "../../components/contentHeader";
 import Layout from "../../components/layout";
-import { getProjectBySlug, getAllProjects } from "../../lib/ProjectAPI";
+import { getProjectBySlug, getAllProjects } from "../../lib/projectAPI";
 import ContentTitle from "../../components/contentTitle";
 import Head from "next/head";
-import markdownToHtml from "../../lib/MarkdownToHtml";
-import type ProjectType from "../../interfaces/Project";
+import markdownToHtml from "../../lib/markdownToHtml";
+import type ProjectType from "../../interfaces/project";
 import Link from "next/link";
 
 type Props = {

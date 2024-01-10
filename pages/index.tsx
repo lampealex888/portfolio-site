@@ -1,13 +1,13 @@
 import Head from "next/head";
-import Post from "../interfaces/Post";
-import Project from "../interfaces/Project";
+import Post from "../interfaces/post";
+import Project from "../interfaces/project";
 import Layout from "../components/layout";
 import Container from "../components/container";
 import Hero from "../components/hero";
 import PostListing from "../components/postListing";
 import ProjectListing from "../components/projectListing";
-import { getAllPosts } from "../lib/PostAPI";
-import { getAllProjects } from "../lib/ProjectAPI";
+import { getAllPosts } from "../lib/postAPI";
+import { getAllProjects } from "../lib/projectAPI";
 
 type Props = {
   allPosts: Post[];

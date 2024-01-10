@@ -1,4 +1,4 @@
-import type Project from "../interfaces/Project";
+import type Project from "../interfaces/project";
 import ProjectPreview from "./projectPreview";
 
 type Props = {
