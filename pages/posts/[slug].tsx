@@ -1,14 +1,14 @@
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
-import Container from "../../components/Container";
-import PostBody from "../../components/ContentBody";
-import PostHeader from "../../components/ContentHeader";
-import Layout from "../../components/Layout";
-import { getPostBySlug, getAllPosts } from "../../lib/PostAPI";
-import PostTitle from "../../components/ContentTitle";
+import Container from "../../components/container";
+import PostBody from "../../components/contentBody";
+import PostHeader from "../../components/contentHeader";
+import Layout from "../../components/layout";
+import { getPostBySlug, getAllPosts } from "../../lib/postAPI";
+import PostTitle from "../../components/contentTitle";
 import Head from "next/head";
-import markdownToHtml from "../../lib/MarkdownToHtml";
-import type PostType from "../../interfaces/Post";
+import markdownToHtml from "../../lib/markdownToHtml";
+import type PostType from "../../interfaces/post";
 import Link from "next/link";
 
 type Props = {

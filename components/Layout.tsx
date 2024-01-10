@@ -1,7 +1,7 @@
-import Footer from "./Footer";
-import Header from "./Header";
-import Meta from "./Meta";
-import GoogleAnalytics from "./GoogleAnalytics";
+import Footer from "./footer";
+import Header from "./header";
+import Meta from "./meta";
+import GoogleAnalytics from "./googleAnalytics";
 
 type Props = {
   preview?: boolean;

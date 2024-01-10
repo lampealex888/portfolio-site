@@ -1,6 +1,6 @@
-import DateFormatter from "./DateFormatter";
-import CoverImage from "./CoverImage";
-import PostTitle from "./ContentTitle";
+import CoverImage from "./coverImage";
+import PostTitle from "./contentTitle";
+import DateFormatter from "./dateFormatter";
 
 type Props = {
   title: string;
@@ -8,7 +8,7 @@ type Props = {
   date: string;
 };
 
-const PostHeader = ({ title, coverImage, date }: Props) => {
+const ContentHeader = ({ title, coverImage, date }: Props) => {
   return (
     <>
       <PostTitle>{title}</PostTitle>
@@ -25,4 +25,4 @@ const PostHeader = ({ title, coverImage, date }: Props) => {
   );
 };
 
-export default PostHeader;
+export default ContentHeader;
