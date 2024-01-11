@@ -1,8 +1,8 @@
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
 import Container from "../../components/container";
-import PostBody from "../../components/contentBody";
-import PostHeader from "../../components/contentHeader";
+import ContentBody from "../../components/contentBody";
+import ContentHeader from "../../components/contentHeader";
 import Layout from "../../components/layout";
 import { getPostBySlug, getAllPosts } from "../../lib/postAPI";
 import PostTitle from "../../components/contentTitle";
@@ -10,6 +10,7 @@ import Head from "next/head";
 import { markdownToHtml } from "../../lib/markdownFormatter";
 import type PostType from "../../interfaces/post";
 import ContentNavigation from "../../components/contentNavigation";
+import PageTrailAnimation from "../../components/pageTrailAnimation";
 
 type Props = {
   post: PostType;
@@ -36,23 +37,25 @@ export default function Post({ post, morePosts, preview }: Props) {
           <PostTitle>Loading…</PostTitle>
         ) : (
           <>
+            <Head>
+              <title>{`${title} | Alex Lampe`}</title>
+              <meta property="og:image" content={post.ogImage.url} />
+            </Head>
             <article>
-              <Head>
-                <title>{title} | Alex Lampe</title>
-                <meta property="og:image" content={post.ogImage.url} />
-              </Head>
-              <PostHeader
-                title={post.title}
-                coverImage={post.coverImage}
-                date={post.date}
+              <PageTrailAnimation>
+                <ContentHeader
+                  title={post.title}
+                  coverImage={post.coverImage}
+                  date={post.date}
+                />
+                <ContentBody content={post.content} />
+              </PageTrailAnimation>
+              <ContentNavigation
+                nextSlug={nextPost ? nextPost.slug : null}
+                prevSlug={prevPost ? prevPost.slug : null}
+                contentType="posts"
               />
-              <PostBody content={post.content} />
             </article>
-            <ContentNavigation
-              nextSlug={nextPost ? nextPost.slug : null}
-              prevSlug={prevPost ? prevPost.slug : null}
-              contentType="posts"
-            />
           </>
         )}
       </Container>

@@ -6,7 +6,7 @@ ogImage:
   url: "/assets/projects/grammar-query/cover.jpg"
 code: "https://github.com/lampealex888/sheinnovates2022-grammar-query"
 demo: "https://nickzana.github.io/grammarquery/"
-tools: ["HTML", "CSS", "JS", "GrammarBot API", "SpeechRecognition API"]
+tools: ["HTML", "CSS", "JS", "GrammarBot API", "Speech Recognition API"]
 ---
 
 GrammarQuery was built as a project for the Unversity of Pittsburgh's [SheInnovates 2022 Hackathon](http://sheinnovates.us/). It's a voice-based language learning tool that prompts you with real-world questions that the user replies to by speaking. It complements other language learning tools that are focused on learning vocabulary and grammar by teaching the user to use English in a conversational manner.

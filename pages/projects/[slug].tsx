@@ -10,6 +10,7 @@ import Head from "next/head";
 import { markdownToHtml } from "../../lib/markdownFormatter";
 import type ProjectType from "../../interfaces/project";
 import ContentNavigation from "../../components/contentNavigation";
+import PageTrailAnimation from "../../components/pageTrailAnimation";
 
 type Props = {
   project: ProjectType;
@@ -36,20 +37,22 @@ export default function Projects({ project, moreProjects, preview }: Props) {
           <>
             <article>
               <Head>
-                <title>{title} | Alex Lampe</title>
+                <title>{`${title} | Alex Lampe`}</title>
                 <meta property="og:image" content={project.ogImage.url} />
               </Head>
-              <ContentHeader
-                title={project.title}
-                coverImage={project.coverImage}
-                date={project.date}
-              />
-              <ContentBody content={project.content} />
-              <ContentNavigation
+              <PageTrailAnimation>
+                <ContentHeader
+                  title={project.title}
+                  coverImage={project.coverImage}
+                  date={project.date}
+                />
+                <ContentBody content={project.content} />
+                <ContentNavigation
                 nextSlug={nextProject ? nextProject.slug : null}
                 prevSlug={prevProject ? prevProject.slug : null}
                 contentType="projects"
               />
+              </PageTrailAnimation>
             </article>
           </>
         )}
