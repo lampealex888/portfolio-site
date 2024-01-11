@@ -8,6 +8,9 @@ const ThemeSwitch = () => {
 
   useEffect(() => {
     themeChange(false);
+    if (localStorage.getItem("theme") == null) {
+      localStorage.setItem("theme", "business");
+    }
     setTheme(localStorage.getItem("theme") as string);
   }, []);
   
