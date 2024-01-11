@@ -57,13 +57,13 @@ const ProjectPreview = ({
         </Link>
       </p>
       <div className="flex flex-row justify-around items-center">
-        <span className="text-lg font-bold px-6">
+        <span className="text-lg font-bold w-3/5">
           Tools used: <span className="font-normal">{tools.join(", ")}</span>
         </span>
-        <a className="btn btn-outline px-3" href={demo}>
+        <a className="btn btn-outline ml-4 w-1/5" href={demo}>
           Open Site
         </a>
-        <a className="btn btn-outline px-3" href={code}>
+        <a className="btn btn-outline ml-4 w-1/5" href={code}>
           View Code
         </a>
       </div>
