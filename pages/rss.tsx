@@ -27,8 +27,8 @@ const generateRssFeed = async (posts: any) => {
   posts.forEach((post: any) => {
     feed.addItem({
       title: post.title,
-      id: site_url + post.slug,
-      link: site_url + post.slug,
+      id: site_url + "/posts/" + post.slug,
+      link: site_url + "/posts/" + post.slug,
       description: post.content,
       date: new Date(post.date),
     });
