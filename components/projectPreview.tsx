@@ -1,28 +1,17 @@
 import DateFormatter from "./dateFormatter";
 import CoverImage from "./coverImage";
 import Link from "next/link";
+import { markdownToPlainText } from "../lib/markdownFormatter";
 
 type Props = {
   title: string;
   coverImage: string;
   date: string;
-  excerpt: string;
   slug: string;
-  code: string;
-  demo: string;
-  tools: string[];
+  content: string;
 };
 
-const ProjectPreview = ({
-  title,
-  coverImage,
-  date,
-  excerpt,
-  slug,
-  code,
-  demo,
-  tools,
-}: Props) => {
+const ProjectPreview = ({ title, coverImage, date, slug, content }: Props) => {
   return (
     <div>
       <div className="mb-5">
@@ -45,16 +34,16 @@ const ProjectPreview = ({
       <div className="text-lg mb-4">
         <DateFormatter dateString={date} />
       </div>
-      <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
-      <p className="text-md mb-4">Tools Used: {tools.join(", ")}</p>
-      <div className="flex justify-around">
-        <Link href={demo} className="btn btn-accent w-1/3">
-          <p>Open Site</p>
+      <p className="text-lg leading-relaxed mb-4">
+        {content.length > 225 ? content.substring(0, 225) + "..." : content}{" "}
+        <Link
+          as={`/projects/${slug}`}
+          href="/projects/[slug]"
+          className="text-lg leading-relaxed mb-4 hover:underline"
+        >
+          Read more →
         </Link>
-        <Link href={code} className="btn btn-secondary w-1/3">
-          <p>View Code</p>
-        </Link>
-      </div>
+      </p>
     </div>
   );
 };

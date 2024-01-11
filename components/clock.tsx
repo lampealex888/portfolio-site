@@ -15,7 +15,6 @@ type TimeOptions = {
 };
 
 const Clock = () => {
-  const [isClient, setIsClient] = useState(false);
   const [currentDate, setCurrentDate] = useState<string>(
     new Date()
       .toLocaleDateString("en-US", {
@@ -37,8 +36,6 @@ const Clock = () => {
   );
 
   useEffect(() => {
-    setIsClient(true);
-
     const intervalId = setInterval(() => {
       setCurrentDate(
         new Date()

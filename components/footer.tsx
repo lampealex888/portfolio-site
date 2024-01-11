@@ -14,7 +14,7 @@ const Footer = () => {
       <div className="flex mx-auto max-w-7xl items-center justify-between flex-col sm:flex-row">
         <Link
           href={`mailto:ajl146@pitt.edu`}
-          className="btn btn-ghost link link-primary no-underline text-lg normal-case"
+          className="btn btn-ghost link no-underline text-lg normal-case"
         >
           Contact
         </Link>

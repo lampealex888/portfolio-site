@@ -4,10 +4,11 @@ import Project from "../interfaces/project";
 import Layout from "../components/layout";
 import Container from "../components/container";
 import Hero from "../components/hero";
-import PostListing from "../components/postListing";
-import ProjectListing from "../components/projectListing";
+import PostListing from "../components/postListings";
+import ProjectListing from "../components/projectListings";
 import { getAllPosts } from "../lib/postAPI";
 import { getAllProjects } from "../lib/projectAPI";
+import { markdownToPlainText } from "../lib/markdownFormatter";
 
 type Props = {
   allPosts: Post[];
@@ -36,26 +37,23 @@ const Index = ({ allPosts, allProjects }: Props) => {
 export default Index;
 
 export const getStaticProps = async () => {
-  const allPosts = getAllPosts([
-    "title",
-    "date",
-    "slug",
-    "author",
-    "coverImage",
-    "excerpt",
-  ]);
+  const allPosts = await Promise.all(
+    getAllPosts(["title", "date", "slug", "coverImage", "content"]).map(
+      async (post) => {
+        post.content = await markdownToPlainText(post.content || "");
+        return post;
+      }
+    )
+  );
 
-  const allProjects = getAllProjects([
-    "title",
-    "date",
-    "slug",
-    "author",
-    "coverImage",
-    "excerpt",
-    "code",
-    "demo",
-    "tools",
-  ]);
+  const allProjects = await Promise.all(
+    getAllProjects(["title", "date", "slug", "coverImage", "content"]).map(
+      async (project) => {
+        project.content = await markdownToPlainText(project.content || "");
+        return project;
+      }
+    )
+  );
 
   return {
     props: { allPosts, allProjects },

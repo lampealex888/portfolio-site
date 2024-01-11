@@ -1,13 +1,10 @@
 ---
 title: "Choosing Between Next.js and Astro: A Developer's Perspective"
-excerpt: "In the ever-evolving landscape of web development, selecting the right framework is a crucial decision. Two compelling options that have "
 coverImage: "/assets/blog/next.js-vs-astro/cover.png"
 date: "2024-01-09T00:00:00.000Z"
 ogImage:
   url: "/assets/blog/next.js-vs-astro/cover.png"
 ---
-
-# Choosing Between Next.js and Astro: A Developer's Perspective
 
 In the ever-evolving landscape of web development, selecting the right framework is a crucial decision. Two compelling options that have gained traction are Next.js and Astro. Both promise to enhance the developer experience and improve website performance, but they come with distinct features and philosophies. In this post, we'll explore the strengths of Next.js and Astro to help you make an informed decision based on your project requirements.
 

@@ -7,7 +7,7 @@ import Layout from "../../components/layout";
 import { getPostBySlug, getAllPosts } from "../../lib/postAPI";
 import PostTitle from "../../components/contentTitle";
 import Head from "next/head";
-import markdownToHtml from "../../lib/markdownToHtml";
+import { markdownToHtml } from "../../lib/markdownFormatter";
 import type PostType from "../../interfaces/post";
 import Link from "next/link";
 
@@ -27,7 +27,7 @@ export default function Post({ post, morePosts, preview }: Props) {
   const currentIndex = morePosts.findIndex((p) => p.slug === post.slug);
   const nextPost = morePosts[currentIndex + 1] || null;
   const prevPost = morePosts[currentIndex - 1] || null;
-  console.log(nextPost, prevPost)
+  console.log(nextPost, prevPost);
 
   return (
     <Layout>
@@ -52,24 +52,24 @@ export default function Post({ post, morePosts, preview }: Props) {
               <div className="mb-32 flex flex-row justify-end gap-x-20">
                 {nextPost && (
                   <Link
-                  className="text-2xl font-bold link hover:underline no-underline"
-                  as={`/posts/${nextPost.slug}`}
-                  href={`/posts/${nextPost.slug}`}
-                >
-                  Next Post: →
-                </Link>
+                    className="text-2xl font-bold link hover:underline no-underline"
+                    as={`/posts/${nextPost.slug}`}
+                    href={`/posts/${nextPost.slug}`}
+                  >
+                    Next Post: →
+                  </Link>
                 )}
                 {prevPost && (
                   <Link
-                  className="text-2xl font-bold link hover:underline no-underline"
-                  as={`/posts/${prevPost.slug}`}
-                  href={`/posts/${prevPost.slug}`}
-                >
-                  ← Previous Post
-                </Link>
+                    className="text-2xl font-bold link hover:underline no-underline"
+                    as={`/posts/${prevPost.slug}`}
+                    href={`/posts/${prevPost.slug}`}
+                  >
+                    ← Previous Post
+                  </Link>
                 )}
               </div>
-            ): null}
+            ) : null}
           </>
         )}
       </Container>
@@ -88,21 +88,12 @@ export async function getStaticProps({ params }: Params) {
     "title",
     "date",
     "slug",
-    "author",
     "content",
     "ogImage",
     "coverImage",
   ]);
   const content = await markdownToHtml(post.content || "");
-  const morePosts = getAllPosts([
-    "title",
-    "date",
-    "slug",
-    "author",
-    "content",
-    "ogImage",
-    "coverImage",
-  ]);
+  const morePosts = getAllPosts(["title", "date", "slug"]);
 
   return {
     props: {

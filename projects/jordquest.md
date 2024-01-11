@@ -1,6 +1,5 @@
 ---
 title: "Jordquest"
-excerpt: "Jordquest is a multiplayer hack-n-slash game in a procedurally generated arena with PvE and PvP elements."
 coverImage: "/assets/projects/jordquest/cover.png"
 date: "2023-12-01T00:00:00.000Z"
 ogImage:
@@ -9,8 +8,6 @@ code: "https://github.com/lampealex888/cs1666final-jordquest"
 demo: "https://lampealex888.itch.io/jordquest"
 tools: ["Bevy", "Rust"]
 ---
-
-## Summary
 
 `Jordquest` was my final project for CS1666 Game Design and Implementation. It's a multiplayer hack-n-slash in a randomly generated arena with both PvE and PvP content. Through this project I was able to learn a lot about Rust and it's game engine Bevy.
 

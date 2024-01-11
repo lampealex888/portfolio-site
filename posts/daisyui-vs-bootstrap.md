@@ -1,6 +1,5 @@
 ---
 title: 'DaisyUI vs Bootstrap: Choosing the Right UI Framework for Your Project'
-excerpt: 'Explore the speed and versatility of Next.js and Astro. React-centric power or zero-config performance – your choice shapes the web.'
 coverImage: '/assets/blog/daisyui-vs-bootstrap/cover.png'
 date: '2024-01-09T00:00:00.000Z'
 ogImage:

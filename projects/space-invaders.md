@@ -1,6 +1,5 @@
 ---
 title: "Space Invaders"
-excerpt: "Space Invaders is a classic arcade game where the player controls a spaceship and must shoot down waves of alien invaders before they reach the bottom of the screen."
 coverImage: "/assets/projects/space-invaders/cover.png"
 date: "2020-06-01T00:00:00.000Z"
 ogImage:
@@ -9,8 +8,6 @@ code: "https://github.com/lampealex888/space-invaders/tree/main"
 demo: "https://lampealex888.itch.io/space-invaders"
 tools: ["PyGame", "Python", "Pygbag"]
 ---
-
-## Summary
 
 This project showcases my passion for game development, specifically through the creation of a Space Invaders game in Python. It represents a blend of my programming skills, creativity, and interest in retro arcade games.
 

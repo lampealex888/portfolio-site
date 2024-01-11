@@ -7,7 +7,7 @@ import Layout from "../../components/layout";
 import { getProjectBySlug, getAllProjects } from "../../lib/projectAPI";
 import ContentTitle from "../../components/contentTitle";
 import Head from "next/head";
-import markdownToHtml from "../../lib/markdownToHtml";
+import { markdownToHtml } from "../../lib/markdownFormatter";
 import type ProjectType from "../../interfaces/project";
 import Link from "next/link";
 
@@ -45,29 +45,29 @@ export default function Projects({ project, moreProjects, preview }: Props) {
                 date={project.date}
               />
               <ContentBody content={project.content} />
+              {nextProject || prevProject ? (
+                <div className="mb-32 flex flex-row justify-end gap-x-20">
+                  {prevProject && (
+                    <Link
+                      className="text-2xl font-bold link hover:underline no-underline"
+                      as={`/projects/${prevProject.slug}`}
+                      href={`/projects/${prevProject.slug}`}
+                    >
+                      ← Previous Project
+                    </Link>
+                  )}
+                  {nextProject && (
+                    <Link
+                      className="text-2xl font-bold link hover:underline no-underline"
+                      as={`/projects/${nextProject.slug}`}
+                      href={`/projects/${nextProject.slug}`}
+                    >
+                      Next Project →
+                    </Link>
+                  )}
+                </div>
+              ) : null}
             </article>
-            {nextProject || prevProject ? (
-              <div className="mb-32 flex flex-row justify-end gap-x-20">
-                {prevProject && (
-                  <Link
-                    className="text-2xl font-bold link hover:underline no-underline"
-                    as={`/projects/${prevProject.slug}`}
-                    href={`/projects/${prevProject.slug}`}
-                  >
-                    ← Previous Project
-                  </Link>
-                )}
-                {nextProject && (
-                  <Link
-                    className="text-2xl font-bold link hover:underline no-underline"
-                    as={`/projects/${nextProject.slug}`}
-                    href={`/projects/${nextProject.slug}`}
-                  >
-                    Next Project →
-                  </Link>
-                )}
-              </div>
-            ) : null}
           </>
         )}
       </Container>
@@ -86,7 +86,6 @@ export async function getStaticProps({ params }: Params) {
     "title",
     "date",
     "slug",
-    "author",
     "content",
     "ogImage",
     "coverImage",
@@ -95,18 +94,7 @@ export async function getStaticProps({ params }: Params) {
     "tools",
   ]);
   const content = await markdownToHtml(project.content || "");
-  const moreProjects = getAllProjects([
-    "title",
-    "date",
-    "slug",
-    "author",
-    "content",
-    "ogImage",
-    "coverImage",
-    "code",
-    "demo",
-    "tools",
-  ]);
+  const moreProjects = getAllProjects(["title", "date", "slug"]);
 
   return {
     props: {
