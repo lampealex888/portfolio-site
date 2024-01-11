@@ -9,6 +9,8 @@ import ProjectListing from "../components/projectListings";
 import { getAllPosts } from "../lib/postAPI";
 import { getAllProjects } from "../lib/projectAPI";
 import { markdownToPlainText } from "../lib/markdownFormatter";
+import { useState } from "react";
+import PageTrailAnimation from "../components/pageTrailAnimation";
 
 type Props = {
   allPosts: Post[];
@@ -24,11 +26,15 @@ const Index = ({ allPosts, allProjects }: Props) => {
         <title>Alex Lampe | Portfolio</title>
       </Head>
       <Container>
-        <Hero />
-        <div id="projects">
-          {Projects.length > 0 && <ProjectListing projects={Projects} />}
-        </div>
-        <div id="blog">{Posts.length > 0 && <PostListing posts={Posts} />}</div>
+        <PageTrailAnimation>
+          <Hero />
+          <div id="projects">
+            {Projects.length > 0 && <ProjectListing projects={Projects} />}
+          </div>
+          <div id="blog">
+            {Posts.length > 0 && <PostListing posts={Posts} />}
+          </div>
+        </PageTrailAnimation>
       </Container>
     </Layout>
   );
@@ -55,7 +61,7 @@ export const getStaticProps = async () => {
   );
 
   const allProjects = await Promise.all(
-    getAllProjects(["title", "date", "slug", "coverImage", "content"]).map(
+    getAllProjects(["title", "date", "slug", "coverImage", "content", "tools", "demo", "code"]).map(
       async (project) => {
         project.content = await markdownToPlainText(project.content);
         if (project.content.length > 300) {
@@ -70,7 +76,7 @@ export const getStaticProps = async () => {
       }
     )
   );
-  
+
   return {
     props: { allPosts, allProjects },
   };

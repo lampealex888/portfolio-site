@@ -9,9 +9,21 @@ type Props = {
   date: string;
   slug: string;
   content: string;
+  tools: string[];
+  demo: string;
+  code: string;
 };
 
-const ProjectPreview = ({ title, coverImage, date, slug, content }: Props) => {
+const ProjectPreview = ({
+  title,
+  coverImage,
+  date,
+  slug,
+  content,
+  tools,
+  demo,
+  code,
+}: Props) => {
   return (
     <div>
       <div className="mb-5">
@@ -34,22 +46,27 @@ const ProjectPreview = ({ title, coverImage, date, slug, content }: Props) => {
       <div className="text-lg mb-4">
         <DateFormatter dateString={date} />
       </div>
-      <p className="text-lg leading-relaxed mb-4">
-        {content.length > 225 ? (
-          <>
-            {content.endsWith(" ") ? content.substring(0, 301) : content.substring(0, 300) + "... "}
-            <Link
-              as={`/projects/${slug}`}
-              href="/projects/[slug]"
-              className="text-lg leading-relaxed mb-4 link-hover"
-            >
-              Read more →
-            </Link>
-          </>
-        ) : (
-          content
-        )}
+      <p className="text-lg leading-relaxed  mb-4">
+        {content}{" "}
+        <Link
+          as={`/projects/${slug}`}
+          href="/projects/[slug]"
+          className="text-lg leading-relaxed link-hover"
+        >
+          Read more →
+        </Link>
       </p>
+      <div className="flex flex-row justify-around items-center">
+        <span className="text-lg font-bold px-6">
+          Tools used: <span className="font-normal">{tools.join(", ")}</span>
+        </span>
+        <a className="btn btn-outline px-3" href={demo}>
+          Open Site
+        </a>
+        <a className="btn btn-outline px-3" href={code}>
+          View Code
+        </a>
+      </div>
     </div>
   );
 };

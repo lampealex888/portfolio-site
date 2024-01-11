@@ -1,6 +1,6 @@
 import { Feed } from "feed";
 import { getAllPosts } from "../lib/postAPI";
-import { markdownToPlainText } from "../lib/markdownFormatter";
+import { markdownToHtml } from "../lib/markdownFormatter";
 
 const generateRssFeed = async (posts: any) => {
   const site_url =
@@ -29,8 +29,16 @@ const generateRssFeed = async (posts: any) => {
       title: post.title,
       id: site_url + "/posts/" + post.slug,
       link: site_url + "/posts/" + post.slug,
-      description: post.content,
+      content: post.content,
       date: new Date(post.date),
+      image: site_url + post.coverImage,
+      author: [
+        {
+          name: "Alex Lampe",
+          email: "ajl146@pitt.edu",
+          link: `${site_url}`,
+        },
+      ],
     });
   });
 
@@ -43,15 +51,7 @@ export async function getServerSideProps({ res }: any) {
   const allPosts = await Promise.all(
     getAllPosts(["title", "date", "slug", "coverImage", "content"]).map(
       async (post) => {
-        post.content = await markdownToPlainText(post.content);
-        if (post.content.length > 300) {
-          if (post.content.endsWith(" ")) {
-            post.content = post.content.substring(0, 301);
-          } else {
-            post.content = post.content.substring(0, 300);
-          }
-          post.content += "...";
-        }
+        post.content = await markdownToHtml(post.content);
         return post;
       }
     )
