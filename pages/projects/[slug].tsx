@@ -9,7 +9,7 @@ import ContentTitle from "../../components/contentTitle";
 import Head from "next/head";
 import { markdownToHtml } from "../../lib/markdownFormatter";
 import type ProjectType from "../../interfaces/project";
-import Link from "next/link";
+import ContentNavigation from "../../components/contentNavigation";
 
 type Props = {
   project: ProjectType;
@@ -34,9 +34,9 @@ export default function Projects({ project, moreProjects, preview }: Props) {
           <ContentTitle>Loading…</ContentTitle>
         ) : (
           <>
-            <article className="mb-32">
+            <article>
               <Head>
-                <title>{title}</title>
+                <title>{title} | Alex Lampe</title>
                 <meta property="og:image" content={project.ogImage.url} />
               </Head>
               <ContentHeader
@@ -45,28 +45,11 @@ export default function Projects({ project, moreProjects, preview }: Props) {
                 date={project.date}
               />
               <ContentBody content={project.content} />
-              {nextProject || prevProject ? (
-                <div className="mb-32 flex flex-row justify-end gap-x-20">
-                  {prevProject && (
-                    <Link
-                      className="text-2xl font-bold link hover:underline no-underline"
-                      as={`/projects/${prevProject.slug}`}
-                      href={`/projects/${prevProject.slug}`}
-                    >
-                      ← Previous Project
-                    </Link>
-                  )}
-                  {nextProject && (
-                    <Link
-                      className="text-2xl font-bold link hover:underline no-underline"
-                      as={`/projects/${nextProject.slug}`}
-                      href={`/projects/${nextProject.slug}`}
-                    >
-                      Next Project →
-                    </Link>
-                  )}
-                </div>
-              ) : null}
+              <ContentNavigation
+                nextSlug={nextProject ? nextProject.slug : null}
+                prevSlug={prevProject ? prevProject.slug : null}
+                contentType="projects"
+              />
             </article>
           </>
         )}

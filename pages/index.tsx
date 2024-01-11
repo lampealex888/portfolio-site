@@ -21,7 +21,7 @@ const Index = ({ allPosts, allProjects }: Props) => {
   return (
     <Layout>
       <Head>
-        <title>Alex Lampe</title>
+        <title>Alex Lampe | Portfolio</title>
       </Head>
       <Container>
         <Hero />
@@ -40,7 +40,15 @@ export const getStaticProps = async () => {
   const allPosts = await Promise.all(
     getAllPosts(["title", "date", "slug", "coverImage", "content"]).map(
       async (post) => {
-        post.content = await markdownToPlainText(post.content || "");
+        post.content = await markdownToPlainText(post.content);
+        if (post.content.length > 300) {
+          if (post.content.endsWith(" ")) {
+            post.content = post.content.substring(0, 301);
+          } else {
+            post.content = post.content.substring(0, 300);
+          }
+          post.content += "...";
+        }
         return post;
       }
     )
@@ -49,12 +57,20 @@ export const getStaticProps = async () => {
   const allProjects = await Promise.all(
     getAllProjects(["title", "date", "slug", "coverImage", "content"]).map(
       async (project) => {
-        project.content = await markdownToPlainText(project.content || "");
+        project.content = await markdownToPlainText(project.content);
+        if (project.content.length > 300) {
+          if (project.content.endsWith(" ")) {
+            project.content = project.content.substring(0, 301);
+          } else {
+            project.content = project.content.substring(0, 300);
+          }
+          project.content += "...";
+        }
         return project;
       }
     )
   );
-
+  
   return {
     props: { allPosts, allProjects },
   };

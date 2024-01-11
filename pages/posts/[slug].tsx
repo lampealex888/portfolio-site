@@ -9,7 +9,7 @@ import PostTitle from "../../components/contentTitle";
 import Head from "next/head";
 import { markdownToHtml } from "../../lib/markdownFormatter";
 import type PostType from "../../interfaces/post";
-import Link from "next/link";
+import ContentNavigation from "../../components/contentNavigation";
 
 type Props = {
   post: PostType;
@@ -36,9 +36,9 @@ export default function Post({ post, morePosts, preview }: Props) {
           <PostTitle>Loading…</PostTitle>
         ) : (
           <>
-            <article className="mb-32">
+            <article>
               <Head>
-                <title>{title}</title>
+                <title>{title} | Alex Lampe</title>
                 <meta property="og:image" content={post.ogImage.url} />
               </Head>
               <PostHeader
@@ -48,28 +48,11 @@ export default function Post({ post, morePosts, preview }: Props) {
               />
               <PostBody content={post.content} />
             </article>
-            {nextPost || prevPost ? (
-              <div className="mb-32 flex flex-row justify-end gap-x-20">
-                {nextPost && (
-                  <Link
-                    className="text-2xl font-bold link hover:underline no-underline"
-                    as={`/posts/${nextPost.slug}`}
-                    href={`/posts/${nextPost.slug}`}
-                  >
-                    Next Post: →
-                  </Link>
-                )}
-                {prevPost && (
-                  <Link
-                    className="text-2xl font-bold link hover:underline no-underline"
-                    as={`/posts/${prevPost.slug}`}
-                    href={`/posts/${prevPost.slug}`}
-                  >
-                    ← Previous Post
-                  </Link>
-                )}
-              </div>
-            ) : null}
+            <ContentNavigation
+              nextSlug={nextPost ? nextPost.slug : null}
+              prevSlug={prevPost ? prevPost.slug : null}
+              contentType="posts"
+            />
           </>
         )}
       </Container>

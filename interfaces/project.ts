@@ -1,4 +1,4 @@
-type ProjectType = {
+type Project = {
   slug: string;
   title: string;
   date: string;
@@ -13,4 +13,4 @@ type ProjectType = {
   tools: string[];
 };
 
-export default ProjectType;
+export default Project;
