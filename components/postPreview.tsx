@@ -34,11 +34,11 @@ const PostPreview = ({ title, coverImage, date, slug, content }: Props) => {
         <DateFormatter dateString={date} />
       </div>
       <p className="text-lg leading-relaxed mb-4">
-        {content.length > 300 ? content.substring(0, 300) + "... " : content}
+        {content}{" "}
         <Link
         as={`/posts/${slug}`}
         href="/posts/[slug]"
-        className="text-lg leading-relaxed mb-4 hover:underline"
+        className="text-lg leading-relaxed link-hover"
       >
         Read more →
       </Link>
