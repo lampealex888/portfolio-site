@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { themeChange } from "theme-change";
 
-const ThemeSwitch = () => {
+const ThemeChange = () => {
   const [theme, setTheme] = useState<string>("business");
 
   useEffect(() => {
@@ -16,7 +16,7 @@ const ThemeSwitch = () => {
   
   return (
     <label className="swap swap-rotate btn btn-circle btn-ghost">
-      <input type="checkbox" data-toggle-theme="corporate,business" />
+      <input type="checkbox" data-toggle-theme="corporate,business" title="Theme change"/>
       <svg
         className={`${
           theme == "business" ? "swap-on" : "swap-off"
@@ -37,4 +37,4 @@ const ThemeSwitch = () => {
   );
 };
 
-export default ThemeSwitch;
+export default ThemeChange;
