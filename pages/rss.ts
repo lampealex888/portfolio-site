@@ -1,5 +1,5 @@
 import { Feed } from "feed";
-import { getAllPosts } from "../lib/postAPI";
+import { getAllPosts } from "../lib/api";
 import { markdownToHtml } from "../lib/markdownFormatter";
 
 const generateRssFeed = async (posts: any) => {
@@ -29,9 +29,9 @@ const generateRssFeed = async (posts: any) => {
       title: post.title,
       id: site_url + "/posts/" + post.slug,
       link: site_url + "/posts/" + post.slug,
+      image: site_url + post.coverImage,
       content: post.content,
       date: new Date(post.date),
-      image: site_url + post.coverImage,
       author: [
         {
           name: "Alex Lampe",

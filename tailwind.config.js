@@ -5,7 +5,7 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   daisyui: {
-    themes: ["winter", "business"],
+    themes: ["corporate", "business"],
   },
   plugins: [
     require('@tailwindcss/typography'),

@@ -16,7 +16,7 @@ const ThemeSwitch = () => {
   
   return (
     <label className="swap swap-rotate btn btn-circle btn-ghost">
-      <input type="checkbox" data-toggle-theme="winter,business" />
+      <input type="checkbox" data-toggle-theme="corporate,business" />
       <svg
         className={`${
           theme == "business" ? "swap-on" : "swap-off"

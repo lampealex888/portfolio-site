@@ -1,7 +1,6 @@
 import DateFormatter from "./dateFormatter";
 import CoverImage from "./coverImage";
 import Link from "next/link";
-import { markdownToPlainText } from "../lib/markdownFormatter";
 
 type Props = {
   title: string;
@@ -46,26 +45,32 @@ const ProjectPreview = ({
       <div className="text-lg mb-4">
         <DateFormatter dateString={date} />
       </div>
-      <p className="text-lg leading-relaxed  mb-4">
+      <p className="text-lg leading-relaxed mb-4">
         {content}{" "}
         <Link
           as={`/projects/${slug}`}
           href="/projects/[slug]"
-          className="text-lg leading-relaxed link-hover"
+          className="text-lg leading-relaxed link-hover whitespace-nowrap"
         >
           Read more →
         </Link>
       </p>
-      <div className="flex flex-row justify-around items-center">
-        <span className="text-lg font-bold w-3/5">
+      {/* grid grid-cols-1 md:grid-cols-2 md:gap-x-16 lg:gap-x-32 gap-y-20 md:gap-y-32 mb-32 */}
+      {/* flex flex-col justify-between items-center sm:flex-row */}
+      <div className="flex flex-col items-start xl:flex-row xl:items-center xl:justify-between">
+        {/* w-1/2 mb-4 sm:gap-0 */}
+        <span className="text-lg font-bold mb-4 xl:mb-0 xl:w-3/5">
           Tools used: <span className="font-normal">{tools.join(", ")}</span>
         </span>
-        <a className="btn btn-outline ml-4 w-1/5" href={demo}>
-          Open Site
-        </a>
-        <a className="btn btn-outline ml-4 w-1/5" href={code}>
-          View Code
-        </a>
+        {/* flex flex-row mx-2 gap-2 max-w-fit */}
+        <div className="flex flex-row gap-2">
+          <a className="btn btn-outline" href={demo}>
+            Open Site
+          </a>
+          <a className="btn btn-outline" href={code}>
+            View Code
+          </a>
+        </div>
       </div>
     </div>
   );

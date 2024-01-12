@@ -4,7 +4,7 @@ import Container from "../../components/container";
 import ContentBody from "../../components/contentBody";
 import ContentHeader from "../../components/contentHeader";
 import Layout from "../../components/layout";
-import { getProjectBySlug, getAllProjects } from "../../lib/projectAPI";
+import { getProjectBySlug, getAllProjects } from "../../lib/api";
 import ContentTitle from "../../components/contentTitle";
 import Head from "next/head";
 import { markdownToHtml } from "../../lib/markdownFormatter";

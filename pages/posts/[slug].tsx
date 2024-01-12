@@ -4,7 +4,7 @@ import Container from "../../components/container";
 import ContentBody from "../../components/contentBody";
 import ContentHeader from "../../components/contentHeader";
 import Layout from "../../components/layout";
-import { getPostBySlug, getAllPosts } from "../../lib/postAPI";
+import { getPostBySlug, getAllPosts } from "../../lib/api";
 import PostTitle from "../../components/contentTitle";
 import Head from "next/head";
 import { markdownToHtml } from "../../lib/markdownFormatter";

@@ -26,7 +26,7 @@ const Hero = () => {
             duration={500}
             className="flex justify-center py-3"
           >
-            <button className="btn btn-primary">Check out my stuff ↓</button>
+            <button className="btn btn-accent">Check out my stuff ↓</button>
           </ScrollLink>
         </div>
       </div>

@@ -6,10 +6,8 @@ import Container from "../components/container";
 import Hero from "../components/hero";
 import PostListing from "../components/postListings";
 import ProjectListing from "../components/projectListings";
-import { getAllPosts } from "../lib/postAPI";
-import { getAllProjects } from "../lib/projectAPI";
+import { getAllPosts, getAllProjects } from "../lib/api";
 import { markdownToPlainText } from "../lib/markdownFormatter";
-import { useState } from "react";
 import PageTrailAnimation from "../components/pageTrailAnimation";
 
 type Props = {
