@@ -21,8 +21,12 @@
   },
   "include": [
     "next-env.d.ts",
+    "@types/environment.d.ts",
+    "@types/remark-html.d.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "tailwind.config.js",
+    "next.config.js"
   ],
   "exclude": [
     "node_modules"

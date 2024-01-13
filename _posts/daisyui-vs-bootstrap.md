@@ -1,9 +1,9 @@
 ---
-title: 'DaisyUI vs Bootstrap: Choosing the Right UI Framework for Your Project'
-coverImage: '/assets/blog/daisyui-vs-bootstrap/cover.png'
+title: 'Bootstrap vs DaisyUI: Component Library Battle'
+coverImage: '/assets/posts/daisyui-vs-bootstrap/cover.png'
 date: '2024-01-09T00:00:00.000Z'
 ogImage:
-  url: '/assets/blog/daisyui-vs-bootstrap/cover.png'
+  url: '/assets/posts/daisyui-vs-bootstrap/cover.png'
 ---
 
 Choosing the right UI component library is a pivotal decision in web development, and two options that developers could consider are the all popular **Bootstrap** and **DaisyUI**. Each library brings its own set of features, design philosophies, and customization capabilities. In this blog post, I'll delve into the characteristics of DaisyUI and Bootstrap to help you make an informed choice for your project.

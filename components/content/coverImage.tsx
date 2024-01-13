@@ -5,10 +5,11 @@ type Props = {
   title: string;
   src: string;
   slug?: string;
+  priority?: boolean;
   contentType?: string;
 };
 
-const CoverImage = ({ title, src, slug, contentType }: Props) => {
+const CoverImage = ({ title, src, slug, priority, contentType }: Props) => {
   const image = (
     <Image
       src={src}
@@ -16,6 +17,7 @@ const CoverImage = ({ title, src, slug, contentType }: Props) => {
       className={
         "shadow-sm w-full hover:shadow-lg transition-shadow duration-200"
       }
+      priority={priority}
       width={1300}
       height={630}
     />
@@ -25,7 +27,7 @@ const CoverImage = ({ title, src, slug, contentType }: Props) => {
       {slug ? (
         <Link
           as={`/${contentType}/${slug}`}
-          href={`/${contentType}/${slug}`}
+          href={`/${contentType}/[slug]`}
           aria-label={title}
         >
           {image}

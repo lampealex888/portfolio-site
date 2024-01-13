@@ -1,25 +1,26 @@
+import Head from "next/head";
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
-import Container from "../../components/container";
-import ContentBody from "../../components/contentBody";
-import ContentHeader from "../../components/contentHeader";
 import Layout from "../../components/layout";
-import { getPostBySlug, getAllPosts } from "../../lib/api";
-import PostTitle from "../../components/contentTitle";
-import Head from "next/head";
-import { markdownToHtml } from "../../lib/markdownFormatter";
-import type PostType from "../../interfaces/post";
-import ContentNavigation from "../../components/contentNavigation";
+import Container from "../../components/container";
+import Template from "../../components/template";
 import PageTrailAnimation from "../../components/pageTrailAnimation";
+import ContentTitle from "../../components/content/title";
+import ContentHeader from "../../components/content/header";
+import ContentBody from "../../components/content/body";
+import Comment from "../../components/comment";
+import ContentNavigation from "../../components/content/navigation";
+import { getPostBySlug, getAllPosts } from "../../lib/api";
+import markdownToHtml from "../../lib/markdownToHtml";
+import type { Post } from "../../interfaces";
 
 type Props = {
-  post: PostType;
-  morePosts: PostType[];
+  post: Post;
+  morePosts: Post[];
   preview?: boolean;
 };
 
 export default function Post({ post, morePosts, preview }: Props) {
-  // Add `posts` to the function parameters
   const router = useRouter();
   const title = `${post.title}`;
   if (!router.isFallback && !post?.slug) {
@@ -28,20 +29,19 @@ export default function Post({ post, morePosts, preview }: Props) {
   const currentIndex = morePosts.findIndex((p) => p.slug === post.slug);
   const nextPost = morePosts[currentIndex + 1] || null;
   const prevPost = morePosts[currentIndex - 1] || null;
-  console.log(nextPost, prevPost);
 
   return (
     <Layout>
       <Container>
         {router.isFallback ? (
-          <PostTitle>Loading…</PostTitle>
+          <ContentTitle>Loading…</ContentTitle>
         ) : (
           <>
             <Head>
               <title>{`${title} | Alex Lampe`}</title>
               <meta property="og:image" content={post.ogImage.url} />
             </Head>
-            <article>
+            <Template key={router.asPath}>
               <PageTrailAnimation>
                 <ContentHeader
                   title={post.title}
@@ -49,13 +49,14 @@ export default function Post({ post, morePosts, preview }: Props) {
                   date={post.date}
                 />
                 <ContentBody content={post.content} />
+                <Comment />
+                <ContentNavigation
+                  nextSlug={nextPost ? nextPost.slug : null}
+                  prevSlug={prevPost ? prevPost.slug : null}
+                  contentType="posts"
+                />
               </PageTrailAnimation>
-              <ContentNavigation
-                nextSlug={nextPost ? nextPost.slug : null}
-                prevSlug={prevPost ? prevPost.slug : null}
-                contentType="posts"
-              />
-            </article>
+            </Template>
           </>
         )}
       </Container>
@@ -87,7 +88,7 @@ export async function getStaticProps({ params }: Params) {
         ...post,
         content,
       },
-      morePosts,
+      morePosts: morePosts,
     },
   };
 }
@@ -96,10 +97,10 @@ export async function getStaticPaths() {
   const posts = getAllPosts(["slug"]);
 
   return {
-    paths: posts.map((post) => {
+    paths: posts.map(({ slug }) => {
       return {
         params: {
-          slug: post.slug,
+          slug: slug,
         },
       };
     }),

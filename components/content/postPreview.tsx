@@ -36,12 +36,12 @@ const PostPreview = ({ title, coverImage, date, slug, content }: Props) => {
       <p className="text-lg leading-relaxed mb-4">
         {content}{" "}
         <Link
-        as={`/posts/${slug}`}
-        href="/posts/[slug]"
-        className="text-lg leading-relaxed link-hover"
-      >
-        Read more →
-      </Link>
+          as={`/posts/${slug}`}
+          href="/posts/[slug]"
+          className="text-lg leading-relaxed link-hover"
+        >
+          Read more →
+        </Link>
       </p>
     </div>
   );

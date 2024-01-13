@@ -55,14 +55,10 @@ const ProjectPreview = ({
           Read more →
         </Link>
       </p>
-      {/* grid grid-cols-1 md:grid-cols-2 md:gap-x-16 lg:gap-x-32 gap-y-20 md:gap-y-32 mb-32 */}
-      {/* flex flex-col justify-between items-center sm:flex-row */}
       <div className="flex flex-col items-start xl:flex-row xl:items-center xl:justify-between">
-        {/* w-1/2 mb-4 sm:gap-0 */}
         <span className="text-lg font-bold mb-4 xl:mb-0 xl:w-3/5">
           Tools used: <span className="font-normal">{tools.join(", ")}</span>
         </span>
-        {/* flex flex-row mx-2 gap-2 max-w-fit */}
         <div className="flex flex-row gap-2">
           <a className="btn btn-outline" href={demo}>
             Open Site

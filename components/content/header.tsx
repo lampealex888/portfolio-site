@@ -1,5 +1,5 @@
 import CoverImage from "./coverImage";
-import PostTitle from "./contentTitle";
+import ContentTitle from "./title";
 import DateFormatter from "./dateFormatter";
 
 type Props = {
@@ -8,13 +8,13 @@ type Props = {
   date: string;
 };
 
-const ContentHeader = ({ title, coverImage, date }: Props) => {
+const Header = ({ title, coverImage, date }: Props) => {
   return (
     <>
-      <PostTitle>{title}</PostTitle>
+      <ContentTitle>{title}</ContentTitle>
       <div className="hidden md:block md:mb-12"></div>
       <div className="mb-8 md:mb-16 sm:mx-0">
-        <CoverImage title={title} src={coverImage} />
+        <CoverImage title={title} src={coverImage} priority={true} />
       </div>
       <div className="max-w-2xl mx-auto">
         <div className="mb-6 text-xl">
@@ -25,4 +25,4 @@ const ContentHeader = ({ title, coverImage, date }: Props) => {
   );
 };
 
-export default ContentHeader;
+export default Header;

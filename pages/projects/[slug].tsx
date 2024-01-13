@@ -1,20 +1,22 @@
+import Head from "next/head";
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
-import Container from "../../components/container";
-import ContentBody from "../../components/contentBody";
-import ContentHeader from "../../components/contentHeader";
 import Layout from "../../components/layout";
-import { getProjectBySlug, getAllProjects } from "../../lib/api";
-import ContentTitle from "../../components/contentTitle";
-import Head from "next/head";
-import { markdownToHtml } from "../../lib/markdownFormatter";
-import type ProjectType from "../../interfaces/project";
-import ContentNavigation from "../../components/contentNavigation";
+import Container from "../../components/container";
+import Template from "../../components/template";
 import PageTrailAnimation from "../../components/pageTrailAnimation";
+import ContentTitle from "../../components/content/title";
+import ContentHeader from "../../components/content/header";
+import ContentBody from "../../components/content/body";
+import Comment from "../../components/comment";
+import ContentNavigation from "../../components/content/navigation";
+import { getProjectBySlug, getAllProjects } from "../../lib/api";
+import markdownToHtml from "../../lib/markdownToHtml";
+import type { Project } from "../../interfaces/index";
 
 type Props = {
-  project: ProjectType;
-  moreProjects: ProjectType[];
+  project: Project;
+  moreProjects: Project[];
   preview?: boolean;
 };
 
@@ -35,11 +37,11 @@ export default function Projects({ project, moreProjects, preview }: Props) {
           <ContentTitle>Loading…</ContentTitle>
         ) : (
           <>
-            <article>
-              <Head>
-                <title>{`${title} | Alex Lampe`}</title>
-                <meta property="og:image" content={project.ogImage.url} />
-              </Head>
+            <Head>
+              <title>{`${title} | Alex Lampe`}</title>
+              <meta property="og:image" content={project.ogImage.url} />
+            </Head>
+            <Template key={router.asPath}>
               <PageTrailAnimation>
                 <ContentHeader
                   title={project.title}
@@ -47,13 +49,14 @@ export default function Projects({ project, moreProjects, preview }: Props) {
                   date={project.date}
                 />
                 <ContentBody content={project.content} />
+                <Comment />
                 <ContentNavigation
-                nextSlug={nextProject ? nextProject.slug : null}
-                prevSlug={prevProject ? prevProject.slug : null}
-                contentType="projects"
-              />
+                  nextSlug={nextProject ? nextProject.slug : null}
+                  prevSlug={prevProject ? prevProject.slug : null}
+                  contentType="projects"
+                />
               </PageTrailAnimation>
-            </article>
+            </Template>
           </>
         )}
       </Container>
@@ -97,10 +100,10 @@ export async function getStaticPaths() {
   const projects = getAllProjects(["slug"]);
 
   return {
-    paths: projects.map((project) => {
+    paths: projects.map(({ slug }) => {
       return {
         params: {
-          slug: project.slug,
+          slug: slug,
         },
       };
     }),
