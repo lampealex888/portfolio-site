@@ -1,14 +1,13 @@
 import Head from "next/head";
-import Post from "../interfaces/post";
-import Project from "../interfaces/project";
 import Layout from "../components/layout";
 import Container from "../components/container";
-import Hero from "../components/hero";
-import PostListing from "../components/postListings";
-import ProjectListing from "../components/projectListings";
-import { getAllPosts, getAllProjects } from "../lib/api";
-import { markdownToPlainText } from "../lib/markdownFormatter";
 import PageTrailAnimation from "../components/pageTrailAnimation";
+import Hero from "../components/hero";
+import PostListing from "../components/content/postListings";
+import ProjectListing from "../components/content/projectListings";
+import { getAllPosts, getAllProjects } from "../lib/api";
+import markdownToPlainText from "../lib/markdownToPlainText";
+import { Post, Project } from "../interfaces/index";
 
 type Props = {
   allPosts: Post[];
@@ -59,20 +58,27 @@ export const getStaticProps = async () => {
   );
 
   const allProjects = await Promise.all(
-    getAllProjects(["title", "date", "slug", "coverImage", "content", "tools", "demo", "code"]).map(
-      async (project) => {
-        project.content = await markdownToPlainText(project.content);
-        if (project.content.length > 300) {
-          if (project.content.endsWith(" ")) {
-            project.content = project.content.substring(0, 301);
-          } else {
-            project.content = project.content.substring(0, 300);
-          }
-          project.content += "...";
+    getAllProjects([
+      "title",
+      "date",
+      "slug",
+      "coverImage",
+      "content",
+      "tools",
+      "demo",
+      "code",
+    ]).map(async (project) => {
+      project.content = await markdownToPlainText(project.content);
+      if (project.content.length > 300) {
+        if (project.content.endsWith(" ")) {
+          project.content = project.content.substring(0, 301);
+        } else {
+          project.content = project.content.substring(0, 300);
         }
-        return project;
+        project.content += "...";
       }
-    )
+      return project;
+    })
   );
 
   return {

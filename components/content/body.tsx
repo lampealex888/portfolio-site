@@ -2,7 +2,7 @@ type Props = {
   content: string;
 };
 
-const ContentBody = ({ content }: Props) => {
+const Body = ({ content }: Props) => {
   return (
     <div className="max-w-2xl mx-auto">
       <div
@@ -13,4 +13,4 @@ const ContentBody = ({ content }: Props) => {
   );
 };
 
-export default ContentBody;
+export default Body;

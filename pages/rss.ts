@@ -1,6 +1,6 @@
 import { Feed } from "feed";
 import { getAllPosts } from "../lib/api";
-import { markdownToHtml } from "../lib/markdownFormatter";
+import markdownToHtml from "../lib/markdownToHtml";
 
 const generateRssFeed = async (posts: any) => {
   const site_url =
