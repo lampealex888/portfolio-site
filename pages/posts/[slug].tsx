@@ -3,17 +3,16 @@ import { useRouter } from "next/router";
 import ErrorPage from "next/error";
 import Layout from "../../components/layout";
 import Container from "../../components/container";
+import Template from "../../components/template";
 import PageTrailAnimation from "../../components/pageTrailAnimation";
 import ContentTitle from "../../components/content/title";
 import ContentHeader from "../../components/content/header";
 import ContentBody from "../../components/content/body";
-import ContentNavigation from "../../components/content/navigation";
 import Comment from "../../components/comment";
+import ContentNavigation from "../../components/content/navigation";
 import { getPostBySlug, getAllPosts } from "../../lib/api";
 import markdownToHtml from "../../lib/markdownToHtml";
 import type { Post } from "../../interfaces";
-import React from "react";
-import Template from "../../components/template";
 
 type Props = {
   post: Post;
@@ -37,26 +36,28 @@ export default function Post({ post, morePosts, preview }: Props) {
         {router.isFallback ? (
           <ContentTitle>Loading…</ContentTitle>
         ) : (
-          <Template key={router.asPath}>
+          <>
             <Head>
               <title>{`${title} | Alex Lampe`}</title>
               <meta property="og:image" content={post.ogImage.url} />
             </Head>
-            <PageTrailAnimation>
-              <ContentHeader
-                title={post.title}
-                coverImage={post.coverImage}
-                date={post.date}
-              />
-              <ContentBody content={post.content} />
-              <Comment />
-              <ContentNavigation
-                nextSlug={nextPost ? nextPost.slug : null}
-                prevSlug={prevPost ? prevPost.slug : null}
-                contentType="posts"
-              />
-            </PageTrailAnimation>
-          </Template>
+            <Template key={router.asPath}>
+              <PageTrailAnimation>
+                <ContentHeader
+                  title={post.title}
+                  coverImage={post.coverImage}
+                  date={post.date}
+                />
+                <ContentBody content={post.content} />
+                <Comment />
+                <ContentNavigation
+                  nextSlug={nextPost ? nextPost.slug : null}
+                  prevSlug={prevPost ? prevPost.slug : null}
+                  contentType="posts"
+                />
+              </PageTrailAnimation>
+            </Template>
+          </>
         )}
       </Container>
     </Layout>

@@ -31,9 +31,7 @@ export default function CommentForm({
       <div className="flex items-center mt-4">
         {isAuthenticated ? (
           <div className="flex items-center space-x-6">
-            <button className="btn btn-primary">
-              Send
-            </button>
+            <button className="btn btn-primary">Send</button>
             <button
               className="btn btn-ghost"
               onClick={() =>

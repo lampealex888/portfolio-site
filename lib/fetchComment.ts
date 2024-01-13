@@ -5,9 +5,9 @@ import clearUrl from "./clearUrl";
 
 export default async function fetchComment(
   req: NextApiRequest,
-  res: NextApiResponse,
+  res: NextApiResponse
 ) {
-  const url = clearUrl(req.headers.referer);
+  const url = clearUrl(req.headers.referer || '');
 
   if (!redis) {
     return res.status(500).json({ message: "Failed to connect to redis." });

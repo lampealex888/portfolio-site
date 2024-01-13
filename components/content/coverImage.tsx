@@ -27,7 +27,7 @@ const CoverImage = ({ title, src, slug, priority, contentType }: Props) => {
       {slug ? (
         <Link
           as={`/${contentType}/${slug}`}
-          href={`/${contentType}/${slug}`}
+          href={`/${contentType}/[slug]`}
           aria-label={title}
         >
           {image}

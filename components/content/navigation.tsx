@@ -13,7 +13,7 @@ const Navigation = ({ nextSlug, prevSlug, contentType }: Props) => {
         <div className="my-6 flex flex-col justify-end sm:flex-row text-right">
           {prevSlug && (
             <Link
-              className="text-xl font-bold link hover:underline no-underline p-6"
+              className="text-xl font-bold link-hover no-underline p-6"
               href={`/${contentType}/${prevSlug}`}
             >
               {contentType === "posts"
@@ -23,7 +23,7 @@ const Navigation = ({ nextSlug, prevSlug, contentType }: Props) => {
           )}
           {nextSlug && (
             <Link
-              className="text-xl font-bold link hover:underline no-underline p-6"
+              className="text-xl font-bold link-hover no-underline p-6"
               href={`/${contentType}/${nextSlug}`}
             >
               {contentType === "posts" ? "Next Post →" : "Next Project →"}
