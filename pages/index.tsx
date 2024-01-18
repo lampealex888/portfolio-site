@@ -43,6 +43,9 @@ export const getStaticProps = async () => {
     getAllPosts(["title", "date", "slug", "coverImage", "content"]).map(
       async (post) => {
         post.content = await markdownToPlainText(post.content);
+        post.wordCount = post.content.split(/\s+/gu).length.toString();
+        post.readingTime = (Math.max(Math.round(parseInt(post.wordCount) / 200), 1)).toString();
+        
         if (post.content.length > 300) {
           if (post.content.endsWith(" ")) {
             post.content = post.content.substring(0, 301);

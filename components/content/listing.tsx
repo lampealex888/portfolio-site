@@ -25,6 +25,8 @@ const Listing = ({ contentType, projects, posts }: Props) => {
               date={post.date}
               slug={post.slug}
               content={post.content}
+              wordCount={post.wordCount}
+              readingTime={post.readingTime}
             />
           ))}
         {contentType === "projects" &&

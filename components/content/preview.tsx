@@ -9,6 +9,8 @@ type Props = {
   date: string;
   slug: string;
   content: string;
+  wordCount?: string;
+  readingTime?: string;
   tools?: string[];
   demo?: string;
   code?: string;
@@ -21,6 +23,8 @@ const Preview = ({
   date,
   slug,
   content,
+  wordCount,
+  readingTime,
   tools,
   demo,
   code,
@@ -44,8 +48,13 @@ const Preview = ({
           {title}
         </Link>
       </h3>
-      <div className="text-lg mb-4">
+      <div className="text-lg mb-4 flex flex-row justify-between">
         <DateFormatter dateString={date} />
+        {wordCount && readingTime && (
+        <div>
+          {wordCount} words ({readingTime} min read)
+        </div>
+      )}
       </div>
       <p className="text-lg leading-relaxed mb-4">
         {content}{" "}
