@@ -3,8 +3,7 @@ import Layout from "../components/layout";
 import Container from "../components/container";
 import PageTrailAnimation from "../components/pageTrailAnimation";
 import Hero from "../components/hero";
-import PostListing from "../components/content/postListings";
-import ProjectListing from "../components/content/projectListings";
+import Listing from "../components/content/listing";
 import { getAllPosts, getAllProjects } from "../lib/api";
 import markdownToPlainText from "../lib/markdownToPlainText";
 import { Post, Project } from "../interfaces/index";
@@ -26,10 +25,10 @@ const Index = ({ allPosts, allProjects }: Props) => {
         <PageTrailAnimation>
           <Hero />
           <div id="projects">
-            {Projects.length > 0 && <ProjectListing projects={Projects} />}
+            {Projects.length > 0 && <Listing contentType="projects" projects={Projects} />}
           </div>
           <div id="blog">
-            {Posts.length > 0 && <PostListing posts={Posts} />}
+            {Posts.length > 0 && <Listing contentType="posts" posts={Posts} />}
           </div>
         </PageTrailAnimation>
       </Container>

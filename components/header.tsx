@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Header = () => {
   return (
-    <div id="header" className="bg-base-200 px-4 min-w-[300px] shadow-sm">
+    <div className="px-4 min-w-[300px] sticky top-0 backdrop-blur-md z-50 collapse">
       <div className="navbar m-auto max-w-7xl flex-col gap-2 sm:flex-row">
         <div className="flex-1">
           <Link as="/" href="/" className="btn btn-ghost text-xl normal-case">

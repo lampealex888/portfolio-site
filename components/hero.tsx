@@ -3,7 +3,7 @@ import { Link as ScrollLink } from "react-scroll";
 
 const Hero = () => {
   return (
-    <div className="hero">
+    <div className="hero min-h-[90vh] sm:min-h-[95vh] overflow-auto lg:rounded-tl-3xl">
       <div className="hero-content flex flex-col md:flex-row-reverse md:justify-between mt-16 mb-16 md:mb-12">
         <Image
           src="/assets/frog-pic.gif"
@@ -24,6 +24,7 @@ const Hero = () => {
             to="projects"
             smooth={true}
             duration={500}
+            offset={-100}
             className="flex justify-center py-3"
           >
             <button className="btn btn-accent">Check out my stuff ↓</button>

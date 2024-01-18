@@ -14,7 +14,7 @@ const Layout = ({ preview, children }: Props) => {
       <Meta />
       <GoogleAnalytics />
       <Header />
-      <div className="min-h-screen m-auto min-w-[300px] max-w-7xl">
+      <div className="min-h-screen m-auto min-w-[300px]">
         <main>{children}</main>
       </div>
       <Footer />

@@ -6,4 +6,6 @@
 
 :root {
   font-family: "Montserrat", "Roboto", "Helvetica", "Arial", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

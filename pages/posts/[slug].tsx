@@ -32,16 +32,16 @@ export default function Post({ post, morePosts, preview }: Props) {
 
   return (
     <Layout>
-      <Container>
-        {router.isFallback ? (
-          <ContentTitle>Loading…</ContentTitle>
-        ) : (
-          <>
-            <Head>
-              <title>{`${title} | Alex Lampe`}</title>
-              <meta property="og:image" content={post.ogImage.url} />
-            </Head>
-            <Template key={router.asPath}>
+      <Template key={router.asPath}>
+        <Container>
+          {router.isFallback ? (
+            <ContentTitle>Loading…</ContentTitle>
+          ) : (
+            <>
+              <Head>
+                <title>{`${title} | Alex Lampe`}</title>
+                <meta property="og:image" content={post.ogImage.url} />
+              </Head>
               <PageTrailAnimation>
                 <ContentHeader
                   title={post.title}
@@ -56,10 +56,10 @@ export default function Post({ post, morePosts, preview }: Props) {
                   contentType="posts"
                 />
               </PageTrailAnimation>
-            </Template>
-          </>
-        )}
-      </Container>
+            </>
+          )}
+        </Container>
+      </Template>
     </Layout>
   );
 }

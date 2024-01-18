@@ -15,7 +15,7 @@ const CoverImage = ({ title, src, slug, priority, contentType }: Props) => {
       src={src}
       alt={`Cover Image for ${title}`}
       className={
-        "shadow-sm w-full hover:shadow-lg transition-shadow duration-200"
+        "shadow-sm w-full hover:shadow-lg transition-shadow duration-200 object-cover object-center rounded-lg"
       }
       priority={priority}
       width={1300}
