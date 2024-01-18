@@ -23,6 +23,8 @@ export type Post = {
     url: string;
   };
   content: string;
+  wordCount: string;
+  readingTime: string;
 };
 
 export type Project = {
