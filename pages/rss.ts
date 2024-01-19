@@ -10,7 +10,7 @@ const generateRssFeed = async (posts: any) => {
 
   const feed = new Feed({
     title: "Alex Lampe | Blog",
-    description: "Thoughts on software development, design, and more.",
+    description: "Exploring the Intriguing: A Chronicle of My Fascinations and Discoveries.",
     id: `${site_url}`,
     link: `${site_url}`,
     language: "en",

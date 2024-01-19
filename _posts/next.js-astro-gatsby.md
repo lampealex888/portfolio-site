@@ -1,5 +1,5 @@
 ---
-title: "Choosing Between React Frameworks: Next.js, Astro, and Gatsby"
+title: "Choosing Between Next.js, Astro, and Gatsby"
 coverImage: "/assets/posts/next.js-astro-gatsby/cover.png"
 date: "2024-01-09T00:00:00.000Z"
 ogImage:
