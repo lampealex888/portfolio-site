@@ -13,8 +13,7 @@ This visual essay explores the hidden history of the bicycle, shedding light on 
 ## **The Birth of the Bicycle**
 
 ![The Laufmaschine](/assets/posts/pedaling-through-history/laufmaschine.png)
-
-> In 1817, Karl Drais introduced the "Laufmaschine," an early precursor to the bicycle. It had no pedals and riders propelled themselves by pushing their feet against the ground.
+*In 1817, Karl Drais introduced the "Laufmaschine," an early precursor to the bicycle. It had no pedals and riders propelled themselves by pushing their feet against the ground.*
 
 Photo credit: [Wide Magazine](https://wide.piaggiogroup.com/en/articles/products/two-hundred-years-of-riding-bicycles-from-the-draisine-to-the-wi-bike/index.html)
 
@@ -25,16 +24,14 @@ Karl Drais invented the Draisine to address the transportation challenges of his
 ## **The Pedal-Powered Revolution**
 
 ![The Velocipede](/assets/posts/pedaling-through-history/velocipede.png)
-
-> The Velocipede, also known as the "boneshaker," was the first pedal-powered bicycle, featuring a wooden frame and iron tires. It gained popularity in the mid-19th century.
+*The Velocipede, also known as the "boneshaker," was the first pedal-powered bicycle, featuring a wooden frame and iron tires. It gained popularity in the mid-19th century.*
 
 Photo Credit: [Ryan Dwrong](https://www.timetoast.com/timelines/the-evolution-of-the-bike)
 
 The next major development came with the introduction of pedals. In the 1860s, Pierre Michaux, a French blacksmith, attached pedals to the front wheel of a bicycle, creating the first pedal-powered bicycle. This design marked a significant improvement in efficiency and ease of use compared to Drais's machine. These early bicycles were often referred to as "boneshakers" due to their rough ride over cobblestone streets ([Britannica](https://www.britannica.com/technology/velocipede)).
 
 ![The Penny Farthing](/assets/posts/pedaling-through-history/penny-farthing.png)
-
-> The Penny Farthing, with its enormous front wheel and small rear wheel, became a symbol of the late 19th-century cycling craze. It required skill and daring to ride.
+*The Penny Farthing, with its enormous front wheel and small rear wheel, became a symbol of the late 19th-century cycling craze. It required skill and daring to ride.*
 
 Photo Credit: [Jonathan]()
 
@@ -45,8 +42,7 @@ In the late 19th century, the iconic Penny Farthing bicycle emerged. It had an e
 The late 19th century witnessed the "Golden Age of Cycling," with the introduction of the Penny Farthing, a high-wheeled bicycle. Its distinctive design, featuring an enormous front wheel and a small rear wheel, made it a symbol of the era. Cycling clubs proliferated, and long-distance races became popular ([Jones](https://capovelo.com/cyclings-enduring-legacy-golden-age-cycling/)).
 
 ![The Safety Bicycle](/assets/posts/pedaling-through-history/safety-bicycle.png)
-
-> The Safety Bicycle, introduced in the 1880s, featured a chain-driven system, equal-sized wheels, and pneumatic tires, making it safer and more accessible to a wider audience.
+*The Safety Bicycle, introduced in the 1880s, featured a chain-driven system, equal-sized wheels, and pneumatic tires, making it safer and more accessible to a wider audience.*
 
 Photo Credit: [Jones](https://capovelo.com/cyclings-enduring-legacy-golden-age-cycling/)
 
@@ -55,16 +51,14 @@ The late 19th century saw the invention of the "Safety Bicycle." This design, ch
 ## **The Bicycle's Role in Societal Transformation**
 
 ![Bicycles played a pivotal role in the women's suffrage movement, granting women newfound mobility and independence in the late 19th and early 20th centuries.](/assets/posts/pedaling-through-history/women-suffrage.png)
-
-> Bicycles played a pivotal role in the women's suffrage movement, granting women newfound mobility and independence in the late 19th and early 20th centuries.
+*Bicycles played a pivotal role in the women's suffrage movement, granting women newfound mobility and independence in the late 19th and early 20th centuries.*
 
 Photo Credit: [Laura Moran](https://www.cmm.bike/new-blog/2017/8/13/la-classe-and-legalite-early-female-cyclists-and-an-overview-of-the-columbia-ladys-pneumatic-safety-bicycle)
 
 The bicycle played a crucial role in societal transformations. It offered women the means to break free from societal constraints, allowing them to travel independently and actively participate in public life. Bicycles also provided affordable transportation, opening up new opportunities for the working class). Moreover, the bicycle became a symbol of freedom and agency for women, challenging traditional gender roles and contributing significantly to the broader narrative of women's rights and suffrage during the 19th century ([Hallenbeck](http://siupress.siu.edu/books/978-0-8093-3445-2)).
 
 ![During World War I and World War II, bicycles served as essential means of transportation for soldiers and civilians alike, highlighting their versatility and practicality.](/assets/posts/pedaling-through-history/ww1-ww2.png)
-
-> During World War I and World War II, bicycles served as essential means of transportation for soldiers and civilians alike, highlighting their versatility and practicality.
+*During World War I and World War II, bicycles served as essential means of transportation for soldiers and civilians alike, highlighting their versatility and practicality.*
 
 Photo Credit: [JESSICA COULON](https://www.bicycling.com/news/g27561042/world-war-1-bicycles/)
 
@@ -73,16 +67,14 @@ During both World War I and World War II, bicycles proved their versatility by s
 ## **The Bicycle in Modern Times**
 
 ![In modern times, the bicycle has become a popular mode of transportation for daily commuting, reducing traffic congestion and promoting a healthier lifestyle.](/assets/posts/pedaling-through-history/modern.png)
-
-> In modern times, the bicycle has become a popular mode of transportation for daily commuting, reducing traffic congestion and promoting a healthier lifestyle.
+*In modern times, the bicycle has become a popular mode of transportation for daily commuting, reducing traffic congestion and promoting a healthier lifestyle.*
 
 Photo Credit: [KF from en.wiki](https://commons.wikimedia.org/wiki/File:Urban_cycling_III.jpg)
 
 In the 20th century and beyond, the bicycle has continued to evolve and adapt to changing needs. Today, it serves as a sustainable mode of transportation, reducing traffic congestion and promoting a healthier lifestyle. Cities worldwide have embraced bike-sharing programs and dedicated cycling lanes to encourage commuting by bicycle ([History](https://www.history.com/news/bicycle-history-invention)).
 
 ![Electric and smart bicycles are shaping the future of cycling, offering increased convenience, efficiency, and connectivity.](/assets/posts/pedaling-through-history/future.png)
-
-> Electric and smart bicycles are shaping the future of cycling, offering increased convenience, efficiency, and connectivity.
+*Electric and smart bicycles are shaping the future of cycling, offering increased convenience, efficiency, and connectivity.*
 
 Photo Credit: [Dylan Love](https://www.businessinsider.com/concept-bicycle-designs-2013-11)
 
