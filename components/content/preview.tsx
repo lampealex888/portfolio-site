@@ -72,11 +72,11 @@ const Preview = ({
             Tools used: <span className="font-normal">{tools.join(", ")}</span>
           </span>
           <div className="flex flex-row gap-2">
-            <a className="btn btn-outline" href={demo}>
-              Open Site
+            <a className="btn btn-neutral" href={demo}>
+              View Live Demo
             </a>
-            <a className="btn btn-outline" href={code}>
-              View Code
+            <a className="btn btn-ghost" href={code}>
+              View on GitHub
             </a>
           </div>
         </div>
