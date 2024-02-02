@@ -6,7 +6,7 @@ const Hero = () => {
     <div className="hero min-h-[90vh] sm:min-h-[95vh] overflow-auto lg:rounded-tl-3xl">
       <div className="hero-content flex flex-col md:flex-row-reverse md:justify-between mt-16 mb-16 md:mb-12">
         <Image
-          src="/assets/frog-pic.gif"
+          src="/assets/headshot.jpg"
           alt="Profile picture"
           width="200"
           height="200"
